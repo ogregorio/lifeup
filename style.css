@@ -1,0 +1,100 @@
+/* HOME */
+body{margin: 0;}
+/* SOBRE O LIFEUP */
+.sobre-lifeup{background:#74BC2D;padding: 1% 5% 1%;margin: 5% 15% 5%;font-family: 'Roboto',sans-serif;border-radius: 8px;text-align: center;}
+.sobre-lifeup h1{font-family: 'Fredoka One',sans-serif;}
+/* SOBRE NÓS */
+.sobre-nos{width: 100%;display: block;text-align: center;padding: 3% 0 5%;background:url(/images/Home/pattern.jpg);box-shadow: inset 0px 0px 15px 9px rgba(0,0,0,0.5);}
+.sobre-nos > h1 {color: #000;font-family: 'Fredoka One',sans-serif;}
+div.sobre-nos .integrante{display: inline-block;width: 29%;padding: 1%;margin:1%;border-radius: 8%;}
+div.sobre-nos .mateus {background: #3A8FFF;}
+div.sobre-nos .gregorio {background:#FFD83A}
+div.sobre-nos .andre {background: #FF4A3A;}
+div.sobre-nos .integrante h4,p{font-family: 'Roboto', sans-serif;}
+div.sobre-nos .integrante img{border-radius: 100%;width: 60%;}
+
+/* SOBRE OS PROGRAMAS */
+/* CONFIGURAÇÃO COMUM */
+.sobre{width: 49%;display: inline-block;float: left;}.ilustracao{width: 49%;display: inline-block;}
+.sobre h1{margin: 5%;font-family: 'Fredoka One',sans-serif;}
+.experimentar {float: right;padding: 2%;border-radius: 8px;display: inline-block;}
+.experimentar a{font-family: 'Fredoka One',sans-serif;text-decoration: none;font-size: 2em;color: #fff;}
+.experimentar a:hover{font-size;: 2.5em;}
+.sobre p{padding: 5%;margin: 5%;font-family: 'Roboto',sans-serif;border-radius: 8px}
+.ilustracao img{height: 100%;margin: 0 0 -5px;}
+/*CONFIGURAÇÃO ESPECIFICA */
+/* SOBRE IMCFY */
+.sobre-imcfy{background: #FF9083;}
+.sobre-imcfy p{background:#BC2D2F;color: #fff;}
+
+/* MENU DA HOME*/
+nav.nav-home {width: 50%;}
+div#menu-home{margin: auto}
+#menu-home ul li.IMC{background: #E75757}#menu ul li.IMC:hover{background: #FF9083}
+#menu-home ul li.Water{background: #38A3D8}#menu ul li.Water:hover{background: #99CDE3}
+#menu-home ul li.Stair{background: #E6AA33}#menu ul li.Stair:hover{background: #FCD476}
+#menu-home ul li.Diet{background: #ED7229}#menu ul li.Diet:hover{background: #FCB676}
+#menu-home ul li{display:inline;width: 50%;text-align: center;font-size: 4em;}
+
+/*      HEADER      */
+header h1{font-family: Roboto Condensed, sans-serif;text-align: center;}
+
+/* MENU*/
+#menu {text-align:center;}
+#menu ul li {display: inline;}
+div#menu ul{margin: 0;padding: 0;width: 100%;}
+div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;}
+#menu ul li a {font-family: Roboto, sans-serif;font-size: 1em;text-decoration: none;color: #fff;display: block;text-align: center;padding: 1em;}
+
+/* MENU ITENS INDIVIDUALMENTE*/
+#menu ul li.IMC{background: #E75757}#menu ul li.IMC:hover{background: #FF9083}
+#menu ul li.Water{background: #38A3D8}#menu ul li.Water:hover{background: #99CDE3}
+#menu ul li.Stair{background: #E6AA33}#menu ul li.Stair:hover{background: #FCD476}
+#menu ul li.Diet{background: #ED7229}#menu ul li.Diet:hover{background: #FCB676}
+@media (max-width: 45em) {#menu ul li a span{display: none;}}
+
+/*Aqui que estarão os itens da div de retorno das funções ex: dieta*/
+.resultado img{
+    display: none;
+}
+/* RESPONSIVIDADE CORPO DO SITE */
+@media (min-width: 45em) {
+   
+
+    /* IMC.FY */
+    div.entrada{display: inline-block;width: 40%;padding: 4%;position: relative;top: 50%;transform: translateY(-70%);}
+    #resultado{display: inline-block;padding: 4%;width: 40%;}
+    div#resultado img{display: inline-block;width: 80%;height: 80%;}
+}
+@media (max-width: 45em) {
+     /* SOBRE NÓS */
+    div.sobre-nos .integrante {margin: 1em auto 1em;display: block;width: 70%;}
+    /* SOBRE OS PROGRAMAS */
+    /* CONFIGURAÇÃO COMUM */
+    .sobre{width:90%;display: block;}
+    .ilustracao{width:90%;display: block;}
+    .ilustracao img{width: 100%;margin: 1em auto -5px;}
+     /* IMC.FY */
+    div.entrada{display: block;padding: 5%;margin:auto;max-width: 100%;}
+    div#resultado{display: inline-block;max-width: 100%;padding: 5%;}
+    div#resultado img{width: 100%;height: 100%;}
+
+}
+/* RESULTADO IMC*/
+.imc-resultado{text-align: center;font-family: 'Roboto', sans-serif;font-size: 2em;background: rgba(255,255,255,.4);border-radius: 100%;border: dashed 5px;padding: 5%;}
+
+/*Form para calcular o imc*/
+form input{margin: 2px 2px 2px 2px;width: 100%;border-radius: 8px;font-size: 24px;font-family: 'Roboto', sans-serif;text-align: center;border: none;padding: 2% 0 2% 0;
+}
+/*Class para esconder os itens*/
+.esconder{
+    display: none;
+}
+/*Class para mostrar os itens de determinado componete*/
+.mostrar{
+    display: block;
+}
+
+/*      FOOTER      */
+/* Copyrigth*/
+footer {font-family: Roboto Condensed, sans-serif;text-align: center;padding: 5%;}
