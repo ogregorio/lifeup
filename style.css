@@ -58,13 +58,18 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
     display: none;
 }
 /* RESPONSIVIDADE CORPO DO SITE */
-@media (min-width: 45em) {
-   
-
-    /* IMC.FY */
-    div.entrada{display: inline-block;width: 40%;padding: 4%;position: relative;top: 50%;transform: translateY(-70%);}
+@media (min-width: 65em) {
+    div.entrada{display: inline-block;width: 40%;padding: 4%;position: relative;top: 50%;transform: translateY(-20%);}
     #resultado{display: inline-block;padding: 4%;width: 40%;}
     div#resultado img{display: inline-block;width: 80%;height: 80%;}
+    .vazio{visibility: hidden;}
+}
+@media (min-width: 45em) {
+    /* IMC.FY */
+    div.entrada{display: inline-block;width: 40%;padding: 4%;position: relative;top: 50%;}
+    #resultado{display: inline-block;padding: 4%;width: 40%;}
+    div#resultado img{display: inline-block;width: 80%;height: 80%;}
+    .vazio{display: none;}
 }
 @media (max-width: 45em) {
      /* SOBRE NÓS */
@@ -78,7 +83,7 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
     div.entrada{display: block;padding: 5%;margin:auto;max-width: 100%;}
     div#resultado{display: inline-block;max-width: 100%;padding: 5%;}
     div#resultado img{width: 100%;height: 100%;}
-
+    .vazio{display: none;}
 }
 /* RESULTADO IMC*/
 .imc-resultado{text-align: center;font-family: 'Roboto', sans-serif;font-size: 2em;background: rgba(255,255,255,.4);border-radius: 100%;border: dashed 5px;padding: 5%;}
