@@ -2,7 +2,7 @@
 body{margin: 0;}
 .logo{width: 200px;padding: 2%;display: block;margin: auto;}}
 /* SOBRE O LIFEUP */
-.sobre-lifeup{background: url(/images/Home/pattern-city.webp);background-size: 80%;padding: 0 0 5%;background-repeat-x: repeat;background-repeat-y: no-repeat;background-position-y: bottom;margin: 0 0 -1px;}
+div.sobre-lifeup{background: url(/images/Home/pattern-city.webp);background-size: 80%;padding: 0 0 5%;background-repeat-x: repeat;background-repeat-y: no-repeat;background-position-y: bottom;margin: 0 0 -1px;}
 .oqelifeup{background:#74BC2D;padding: 1% 5% 1%;margin: 5% 15% 5%;font-family: 'Roboto',sans-serif;border-radius: 8px;text-align: center;}
 .sobre-lifeup h1{font-family: 'Fredoka One',sans-serif;}
 /* SOBRE NÓS */
