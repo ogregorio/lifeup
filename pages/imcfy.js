@@ -8,7 +8,7 @@ function funcaoClassificar(){
     var peso = document.getElementById('peso');
     var altura = document.getElementById('altura');
     var pesoDaPessoa = Number(peso.value);
-    var alturaDaPessoa = Number(altura.value);
+    var alturaDaPessoa = Number(altura.value)/100;
     var shake = "shake";
     var imc = pesoDaPessoa / (alturaDaPessoa * alturaDaPessoa);
     var imcArredondado = parseFloat(imc.toFixed(0))
