@@ -2,9 +2,9 @@
 body{margin: 0;}
 .logo{width: 200px;padding: 2%;display: block;margin: auto;}}
 /* SOBRE O LIFEUP */
-div.sobre-lifeup{background: url(/images/Home/pattern-city.webp);background-size: 80%;padding: 0 0 5%;background-repeat-x: repeat;background-repeat-y: no-repeat;background-position-y: bottom;margin: 0 0 -1px;}
-.oqelifeup{background:#74BC2D;padding: 1% 5% 1%;margin: 5% 15% 5%;font-family: 'Roboto',sans-serif;border-radius: 8px;text-align: center;}
-.sobre-lifeup h1{font-family: 'Fredoka One',sans-serif;}
+div.sobre-lifeup{background: url("/images/Home/pattern-city.webp");padding: 5% 15% 5%;background-size: 80%;background-repeat-x: repeat;background-repeat-y: no-repeat;background-position-y: bottom;margin: 0 0 -1px;}
+.texto-lifeup{margin: 5% 15% 5%;background:#74BC2D;padding: 1% 5% 1%;font-family: 'Roboto',sans-serif;border-radius: 8px;text-align: center;}
+.texto-lifeup h1{font-family: 'Fredoka One',sans-serif;}
 /* SOBRE NÓS */
 .sobre-nos{width: 100%;display: block;text-align: center;padding: 3% 0 5%;background:url(/images/Home/pattern.jpg);box-shadow: inset 0px 0px 15px 9px rgba(0,0,0,0.5);}
 .sobre-nos > h1 {color: #000;font-family: 'Fredoka One',sans-serif;}
@@ -18,9 +18,9 @@ div.sobre-nos .integrante img{border-radius: 100%;width: 60%;}
 
 /* SOBRE OS PROGRAMAS */
 /* CONFIGURAÇÃO COMUM */
-.sobre{width: 49%;display: inline-block;float: left;}.ilustracao{width: 49%;display: inline-block;}
+.sobre{width: 49%;float: left;}.ilustracao{width: 49%;display: inline-block;}
 .sobre h1{margin: 5%;font-family: 'Fredoka One',sans-serif;}
-.experimentar {float: right;padding: 2%;border-radius: 8px;display: inline-block;background: #FF3A3E;transition: .5s;}
+.experimentar {float: right;padding: 2%;border-radius: 8px;background: #FF3A3E;transition: .5s;}
 .experimentar a{font-family: 'Fredoka One',sans-serif;text-decoration: none;font-size: 2em;color: #fff;}
 .experimentar:hover {background: #971010;}
 .sobre p{padding: 5%;margin: 5%;font-family: 'Roboto',sans-serif;border-radius: 8px}
@@ -61,15 +61,9 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
     display: none;
 }
 /* RESPONSIVIDADE CORPO DO SITE */
-@media (min-width: 65em) {
-    div.entrada{display: inline-block;width: 40%;padding: 4%;position: relative;top: 50%;transform: translateY(-20%);}
-    #resultado{display: inline-block;padding: 4%;width: 40%;}
-    div#resultado img{display: inline-block;width: 80%;height: 80%;}
-    .vazio{visibility: hidden;}
-}
 @media (min-width: 45em) {
     /* IMC.FY */
-    div.entrada{display: inline-block;width: 40%;padding: 4%;position: relative;top: 50%;}
+    .formulario{width: 40%;display: inline-block;float: left;padding: 5%;}
     #resultado{display: inline-block;padding: 4%;width: 40%;}
     div#resultado img{display: inline-block;width: 80%;height: 80%;}
     .vazio{display: none;}
@@ -83,7 +77,7 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
     .ilustracao{width:90%;display: block;}
     .ilustracao img{width: 100%;margin: 1em auto -5px;}
      /* IMC.FY */
-    div.entrada{display: block;padding: 5%;margin:auto;max-width: 100%;}
+     .formulario{display: block;padding: 5%;margin:auto;max-width: 100%;}
     div#resultado{display: inline-block;max-width: 100%;padding: 5%;}
     div#resultado img{width: 100%;height: 100%;}
     .vazio{display: none;}
