@@ -86,7 +86,10 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
     .vazio{display: none;}
 }
 /* RESULTADO IMC*/
-.imc-resultado{text-align: center;font-family: 'Roboto', sans-serif;font-size: 2em;background: rgba(255,255,255,.4);border-radius: 100%;border: dashed 5px;padding: 5%;}
+.imc-resultado{text-align: center;float:left;font-family: 'Roboto', sans-serif;font-size: 2em;background: rgba(255,255,255,.4);border-radius: 100%;border: dashed 5px;padding: 5%;}
+div.alerta{padding: 5%;margin: 2px 0px 2px 0px;font-family: 'Roboto', sans-serif;font-size: 1.5em;font-weight: bolder;border-radius: 8px;color: #ffffff;border: 2px dashed #000;}
+div.alerta i{display: inline;}div.alerta p{display: inline;}
+div.alerta a:link{text-decoration: none;color: #ffffff;}div.alerta a:link:hover{color:#000}
 
 /*Form para calcular o imc*/
 form input{margin: 2px 2px 2px 2px;width: 100%;border-radius: 8px;font-size: 24px;font-family: 'Roboto', sans-serif;text-align: center;border: none;padding: 2% 0 2% 0;
