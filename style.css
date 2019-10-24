@@ -1,15 +1,17 @@
 /* HOME */
 body{margin: 0;}
 /* SOBRE O LIFEUP */
-.sobre-lifeup{background:#74BC2D;padding: 1% 5% 1%;margin: 5% 15% 5%;font-family: 'Roboto',sans-serif;border-radius: 8px;text-align: center;}
+.sobre-lifeup{background: url(/images/Home/pattern-city.webp);background-size: 80%;padding: 0 0 5%;background-repeat-x: repeat;background-repeat-y: no-repeat;background-position-y: bottom;margin: 0 0 -1px;}
+.oqelifeup{background:#74BC2D;padding: 1% 5% 1%;margin: 5% 15% 5%;font-family: 'Roboto',sans-serif;border-radius: 8px;text-align: center;}
 .sobre-lifeup h1{font-family: 'Fredoka One',sans-serif;}
 /* SOBRE NÓS */
 .sobre-nos{width: 100%;display: block;text-align: center;padding: 3% 0 5%;background:url(/images/Home/pattern.jpg);box-shadow: inset 0px 0px 15px 9px rgba(0,0,0,0.5);}
 .sobre-nos > h1 {color: #000;font-family: 'Fredoka One',sans-serif;}
-div.sobre-nos .integrante{display: inline-block;width: 29%;padding: 1%;margin:1%;border-radius: 8%;}
-div.sobre-nos .mateus {background: #3A8FFF;}
-div.sobre-nos .gregorio {background:#FFD83A}
-div.sobre-nos .andre {background: #FF4A3A;}
+div.sobre-nos .integrante{display: inline-block;width: 29%;padding: 1%;margin:1%;border-radius: 8%;transition: .5s;}
+div.sobre-nos .integrante:hover{border-radius: 16%;}
+div.sobre-nos .mateus {background: #99CDE3;}div.sobre-nos .mateus:hover {background: #38A3D8;}
+div.sobre-nos .gregorio {background:#FCD476}div.sobre-nos .gregorio:hover {background:#E6AA33}
+div.sobre-nos .andre {background: #FF9083;}div.sobre-nos .andre:hover {background: #E75757;}
 div.sobre-nos .integrante h4,p{font-family: 'Roboto', sans-serif;}
 div.sobre-nos .integrante img{border-radius: 100%;width: 60%;}
 
@@ -17,9 +19,9 @@ div.sobre-nos .integrante img{border-radius: 100%;width: 60%;}
 /* CONFIGURAÇÃO COMUM */
 .sobre{width: 49%;display: inline-block;float: left;}.ilustracao{width: 49%;display: inline-block;}
 .sobre h1{margin: 5%;font-family: 'Fredoka One',sans-serif;}
-.experimentar {float: right;padding: 2%;border-radius: 8px;display: inline-block;}
+.experimentar {float: right;padding: 2%;border-radius: 8px;display: inline-block;background: #FF3A3E;transition: .5s;}
 .experimentar a{font-family: 'Fredoka One',sans-serif;text-decoration: none;font-size: 2em;color: #fff;}
-.experimentar a:hover{font-size;: 2.5em;}
+.experimentar:hover {background: #971010;}
 .sobre p{padding: 5%;margin: 5%;font-family: 'Roboto',sans-serif;border-radius: 8px}
 .ilustracao img{height: 100%;margin: 0 0 -5px;}
 /*CONFIGURAÇÃO ESPECIFICA */
