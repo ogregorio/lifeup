@@ -5,28 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#E6AA33">
   <title>Life Up</title>
-  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
-  <link href="/fontawesome/css/all.css" rel="stylesheet">
-  <link rel="shortcut icon" href="/images/favicon.png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="../fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../style.css?v=1">
+  <link rel="shortcut icon" href="../images/favicon.png" />
+  <script src="../db.js"></script>
+  <script src="./escada.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
 </head>
-<body style="background: #FCD476">
+<body style="background: #FCD476;"  onload="initial()">
 <header>
-  <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="/images/logo.gif"/></a><nav><div id="menu">
+  <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a><nav><div id="menu">
 <ul>
-  <li class="IMC"><a href="/pages/IMC.fy.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
-  <li class="Water"><a href="/pages/Water.fy.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
-  <li class="Stair" style="background: #FCD476"><a style="color:#000" href="/pages/Escada.fy.html"><i class="fas fa-hiking"></i><span> Stair.fy</span></a></li>
-  <li class="Diet"><a href="/pages/Diet.fy.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></li>
+  <li class="IMC"><a href="./Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
+  <li class="Water"><a href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
+  <li class="Stair" style="background: #FCD476"><a style="color:#000" href="./Escada.html"><i class="fas fa-hiking"></i><span> Stair.fy</span></a></li>
+  <li class="Diet"><a href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></li></ul></a>
 </ul>
 </div>
 </nav>
 </header>
+<section id="mapa-do-tesouro">
+  <div class="indice"  onclick="funcaoAtividade1('0', 10);">
+    <img src="../images/IMC/sprite4.png" width="80%;">
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('1', 5);">
+    <i class="fas fa-arrow-circle-right "></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('2', 5);">
+    <i class="fas fa-arrow-circle-right"></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('3', 5);">
+    <i class="fas fa-arrow-circle-right"></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('4', 5);">
+    <i class="fas fa-arrow-circle-down"></i>
+  </div>
+
+  <div class="indice" onclick="funcaoAtividade1('5', 5);">
+    <i style="margin-left: 20%;" class="fas fa-arrow-circle-down"></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('6', 5);">
+    <i class="fas fa-arrow-circle-left"></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('7', 5);">
+    <i class="fas fa-arrow-circle-left"></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('8', 5);">
+    <i class="fas fa-arrow-circle-left"></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('9', 5);">
+    <img style="margin-left: -20%;" src="../images/IMC/sprite4.png" width="80%;">
+  </div>
+
+  <div class="indice" onclick="funcaoAtividade1('10', 5);">
+    <i style="margin-left: 20%;" class="fas fa-arrow-circle-down"></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('11', 5);">
+    <p>  </p>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('12', 5);">
+    <p>  </p>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('13', 5);">
+    <p>  </p>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('14', 5);">
+    <p>  </p>
+  </div>
+
+  
+  <div class="indice" onclick="funcaoAtividade1('15', 5);">
+    <img src="../images/IMC/sprite4.png" width="80%;">
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('16', 5);">
+    <i class="fas fa-arrow-circle-right"></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('17', 5);">
+    <i class="fas fa-arrow-circle-right"></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('18', 5);">
+    <i class="fas fa-arrow-circle-right"></i>
+  </div>
+  <div class="indice" onclick="funcaoAtividade1('19', 5);">
+    <i class="fas fa-arrow-circle-down"></i>
+  </div>
+
+</section>
+
+<section id="res">
+
+</section>
+<section id="crono1">
+
+</section>
+<section id="crono">
+
+</section>
+
+</br>
+<button id="finalizar" value="1" class="btn btn-outline-success" style="width: 100%; display: none;">Finalizar</button>
 
 <footer>
   <div id="copyrigth">
 <a>Copyrigth Gregor&Apolinar.io</a></div>
 </footer>
+
+<script>
+  function initial(){
+    funcaoReiderizarNovoFrame();
+  }
+</script>
 </body>
-  <script src="main.js" type="text/javascript"></script>
 </html>
