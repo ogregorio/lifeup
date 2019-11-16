@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Life Up</title>
-  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
+  
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Fredoka+One&display=swap" rel="stylesheet">
-  <link href="/fontawesome/css/all.css" rel="stylesheet">
-  <link rel="shortcut icon" href="/images/favicon.png" />
-
+  <link rel="shortcut icon" href="./images/favicon.png" />
+  <link href="./fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="./style.css?v=1">
+  <script src="./db.js"></script>
 </head>
-<body>
+<body onload="init();">
     <header>
-        <h1 style="display: none;">Life Up</h1><a href="index.html"><img class="logo" src="/images/logo.gif"/></a>
+        <h1 style="display: none;">Life Up</h1><a href="index.html"><img class="logo" src="./images/logo.gif"/></a>
         <nav>
         <div id="menu">
         <ul>
-          <li class="IMC" style="background: #FF9083"><a style="color:#000" href="/pages/IMC.fy.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
-          <li class="Water"><a href="/pages/Water.fy.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
-          <li class="Stair"><a href="/pages/Escada.fy.html"><i class="fas fa-hiking"></i><span> Stair.fy</span></a></li>
-          <li class="Diet"><a href="/pages/Diet.fy.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
+          <li class="IMC" style="background: #FF9083"><a style="color:#000" href="./pages/Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
+          <li class="Water"><a href="./pages/Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
+          <li class="Stair"><a href="./pages/Escada.html"><i class="fas fa-hiking"></i><span> Stair.fy</span></a></li>
+          <li class="Diet"><a href="./pages/Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
         </ul>
         </div>
         </nav>
@@ -31,14 +32,13 @@
   <p>Life UP é um projeto de software na web, que promove ferramentas que facilitam a vida do usuário que visa minimizar os danos causados pelo estresse e falta de tempo da vida urbana.</p>
 </div>
 </div>    
- 
 
 <div class="sobre-nos">
   <h1>EQUIPE</h1>
   <div class="mateus integrante">
       <img src="https://pickaface.net/gallery/avatar/88885972_161201_0132_3gzi9.png"/>
       <h4>Mateus Apolinário</h4>
-      <p>Esse é o tal tal tal tal bla bla bla bla</p>
+      <p>Esse é o tal tal tal tal bla bla bla</p>
   </div>
   <div class="gregorio integrante">
       <img src="https://pickaface.net/gallery/avatar/88885972_161201_0132_3gzi9.png"/>
@@ -56,21 +56,22 @@
   <div class="sobre">
     <h1>IMC.fy</h1>
     <p>Sobre o IMC, tal tal tal tal tal tal tal taltal tal tal taltal tal tal taltal tal tal taltal tal tal taltal tal tal taltal tal tal taltal tal tal tal  </p>
-    <div  class="experimentar"><a  href="/pages/IMC.fy.html">EXPERIMENTAR!</a></div>
+    <div  class="experimentar"><a  href="./pages/IMC.fy.html">EXPERIMENTAR!</a></div>
   </div>
   <div class="ilustracao">
-    <img src="/images/Home/sprite-IMC.png"/>
+    <img src="./images/Home/sprite-IMC.png"/>
   </div>
 
 </div>
 
 <footer>
   <div id="copyrigth">
-    <a>Copyrigth LIFE ❤️ UP</a></div>
+    <a>Copyrigth LIFE ❤ UP</a></div>
 </footer>
-
-<script src="script.js"></script>
-
+<script>
+  function init(){
+    funcaoDb();
+  }
+</script>
 </body>
-  <script src="main.js" type="text/javascript"></script>
 </html>
