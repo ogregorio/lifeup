@@ -1,12 +1,16 @@
+@font-face{
+    font-family: relogio;
+    src: url('./DS-DIGIB.TTF')
+}
 /* HOME */
 body{margin: 0;}
-.logo{width: 200px;padding: 2%;display: block;margin: auto;}}
+.logo{width: 200px;padding: 2%;display: block;margin: auto;}
 /* SOBRE O LIFEUP */
-div.sobre-lifeup{background: url("/images/Home/pattern-city.webp");padding: 5% 15% 5%;background-size: 80%;background-repeat-x: repeat;background-repeat-y: no-repeat;background-position-y: bottom;margin: 0 0 -1px;}
+div.sobre-lifeup{background: url("./images/Home/pattern-city.webp");padding: 5% 15% 5%;background-size: 80%; background-repeat: repeat-x;background-position-y: bottom;}
 .texto-lifeup{margin: 5% 15% 5%;background:#74BC2D;padding: 1% 5% 1%;font-family: 'Roboto',sans-serif;border-radius: 8px;text-align: center;}
 .texto-lifeup h1{font-family: 'Fredoka One',sans-serif;}
 /* SOBRE NÓS */
-.sobre-nos{width: 100%;display: block;text-align: center;padding: 3% 0 5%;background:url(/images/Home/pattern.jpg);box-shadow: inset 0px 0px 15px 9px rgba(0,0,0,0.5);}
+.sobre-nos{width: 100%;display: block;text-align: center;padding: 3% 0 5%;background:url("./images/Home/pattern.jpg");box-shadow: inset 0px 0px 15px 9px rgba(0,0,0,0.5);}
 .sobre-nos > h1 {color: #000;font-family: 'Fredoka One',sans-serif;}
 div.sobre-nos .integrante{display: inline-block;width: 29%;padding: 1%;margin:1%;border-radius: 8%;transition: .5s;}
 div.sobre-nos .integrante:hover{border-radius: 16%;}
@@ -37,23 +41,105 @@ div#menu-home{margin: auto}
 #menu-home ul li.Water{background: #38A3D8}#menu ul li.Water:hover{background: #99CDE3}
 #menu-home ul li.Stair{background: #E6AA33}#menu ul li.Stair:hover{background: #FCD476}
 #menu-home ul li.Diet{background: #ED7229}#menu ul li.Diet:hover{background: #FCB676}
-#menu-home ul li{display:inline;width: 50%;text-align: center;font-size: 4em;}
+#menu-home ul li{display:inline; width: 50%; text-align: center;font-size: 4em;}
 
 /*      HEADER      */
-header h1{font-family: Roboto Condensed, sans-serif;text-align: center;}
+header h1{font-family: 'Roboto' Condensed, sans-serif;text-align: center;}
 
 /* MENU*/
 #menu {text-align:center;}
 #menu ul li {display: inline;}
 div#menu ul{margin: 0;padding: 0;width: 100%;}
 div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;}
-#menu ul li a {font-family: Roboto, sans-serif;font-size: 1em;text-decoration: none;color: #fff;display: block;text-align: center;padding: 1em;}
+#menu ul li a {font-family: 'Roboto', sans-serif;font-size: 1em;text-decoration: none;color: #fff;display: block;text-align: center;padding: 1em;}
 
 /* MENU ITENS INDIVIDUALMENTE*/
 #menu ul li.IMC{background: #E75757}#menu ul li.IMC:hover{background: #FF9083}
 #menu ul li.Water{background: #38A3D8}#menu ul li.Water:hover{background: #99CDE3}
 #menu ul li.Stair{background: #E6AA33}#menu ul li.Stair:hover{background: #FCD476}
 #menu ul li.Diet{background: #ED7229}#menu ul li.Diet:hover{background: #FCB676}
+
+/*Botões das categorias do Diet.fy*/
+.bloco-alimento{
+    transition-duration: 1s;
+    opacity: 1;
+}
+
+/*box de alerta*/
+.alerta{
+    background-color: rgba(255, 0, 0, 0.37);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    text-decoration: underline;
+    color: white;
+    border-radius: 10%;
+}
+.alerta > span{
+    font-weight: bold;
+}
+
+/*Formatação Escada.fy*/
+#mapa-do-tesouro{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.indice{
+    margin-top: 25%;
+    font-size: 5em;
+    color: #ff922b;
+}
+
+#botoes{
+    margin-top: 2%;
+    padding: 1%;
+}
+
+.texto-acima{
+    color: black;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    font-size: 250%;
+    text-align: center;
+}
+
+.sumir{
+    display: none;
+}
+/*formatção cronometro*/
+#crono{
+    display: grid;
+    height: 100px;
+    width: 100%;
+    grid-template-columns: repeat(300, 1fr);
+    grid-template-rows: 1fr;
+    background-color: white;
+    margin: 0 auto;
+    display: none;
+    
+}
+#crono div{
+    font-size: 3em;
+}
+
+#crono p{
+    font-family: relogio;
+    margin-top: 25%;
+}
+.complete{
+    background-color: blue;
+}
+
+.verde{
+    color: green;
+    opacity: 1;
+    display: inline;
+}
+
+
 @media (max-width: 45em) {#menu ul li a span{display: none;}}
 
 /*Aqui que estarão os itens da div de retorno das funções ex: dieta*/
@@ -67,6 +153,7 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
     #resultado{display: inline-block;padding: 4%;width: 40%;}
     div#resultado img{display: inline-block;width: 80%;height: 80%;}
     .vazio{display: none;}
+    
 }
 @media (max-width: 45em) {
      /* SOBRE NÓS */
@@ -81,6 +168,10 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
     div#resultado{display: inline-block;max-width: 100%;padding: 5%;}
     div#resultado img{width: 100%;height: 100%;}
     .vazio{display: none;}
+    /*Botões das categorias*/
+    .categorias-alimentos{
+        grid-template-columns: 1fr 1fr;
+    }
 }
 /* RESULTADO IMC*/
 .imc-resultado{text-align: center;float:left;font-family: 'Roboto', sans-serif;font-size: 2em;background: rgba(255,255,255,.4);border-radius: 100%;border: dashed 5px;padding: 5%;}
@@ -100,6 +191,9 @@ form input{margin: 2px 2px 2px 2px;width: 100%;border-radius: 8px;font-size: 24p
     display: block;
 }
 
+
+
+
 /*      FOOTER      */
 /* Copyrigth*/
-footer {font-family: Roboto Condensed, sans-serif;text-align: center;padding: 5%;}
+footer {font-family: 'Roboto' Condensed, sans-serif;text-align: center;padding: 5%;}
