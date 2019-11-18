@@ -5,29 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#38A3D8">
   <title>Life Up</title>
-  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="/style.css">
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="../style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
-  <link href="/fontawesome/css/all.css" rel="stylesheet">
-  <link rel="shortcut icon" href="/images/favicon.png" />
+  <link href="../fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../images/favicon.png" />
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="./water.js"></script>
+  
 </head>
-<body style="background: #99CDE3">
+<body style="background: #99CDE3" onload="init1();">
 <header>
-  <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="/images/logo.gif"/></a><nav><nav>
+  <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a><nav><nav>
 <div id="menu">
 <ul>
-  <li class="IMC"><a href="/pages/IMC.fy.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
-  <li class="Water"  style="background: #99CDE3"><a style="color:#000" href="/pages/Water.fy.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
-  <li class="Stair"><a href="/pages/Escada.fy.html"><i class="fas fa-hiking"></i><span> Stair.fy</span></a></li>
-  <li class="Diet"><a href="/pages/Diet.fy.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></li>
+  <li class="IMC"><a href="./Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
+  <li class="Water"  style="background: #99CDE3"><a style="color:#000" href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
+  <li class="Stair"><a href="./Escada.html"><i class="fas fa-hiking"></i><span> Stair.fy</span></a></li>
+  <li class="Diet"><a href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
 </ul>
 </div>
 </nav>
 </header>
+</br>
+</br>
+<select name="lista" id="listacdd" size="1">
+  
+  <option value="">SELECIONE</option>
+  <option value="SBAN GO">Anápolis - GO</option>
+  <option value="SBNT RN">Augusto Severo - RN</option>
+  <option value="SBCT PR">Afonso Pena - PR</option>
+  <option value="SBBH MG">Belo Horizonte - MG</option>
+  <option value="SBBW MT">Barra do Garças - MT</option>
+  <option value="SBBU SP">Bauru - SP</option>
+  <option value="SBBV RR">Boa Vista - RR</option>
+  <option value="SBCH SC">Chapecó -  SC</option>
+  <option value="SBCB RJ">Cabo Frio - RJ</option>
+  <option value="SBCJ PA">Cajarás - PA</option>
+  <option value="SBJU CE">Cariri - CE</option>
+  <option value="SBPB PI">Dr. João Silva Filho - PI</option>
+  <option value="SBVT ES">Eurico Aguiar Salles - ES</option>
+  <option value="SBEG AM">Eduardo Gomes - AM</option>
+  <option value="SBFN PE">Fernando de Noronha - PE</option>
+  <option value="SBGM RO">Guajará Mirim - RO</option>
+  <option value="SBGR SP">Guarulhos - SP</option>
+  <option value="SBPP MS">Internacional - MS</option>
+  <option value="SBIP MG">Ipatinga - MG</option>
+  <option value="SBBR DF">Juscelino Kubitschek - DF</option>
+  <option value="SBLO PR">Londrina - PR</option>
+  <option value="SBME RJ">Macaé - RJ</option>
+  <option value="SBNF SC">Min. Victor Konder - SC</option>
+  <option value="SBOI AP">Oiapoque - AP</option>
+  <option value="SBPN TO">Porto Nacional - TO</option>
+  <option value="SBPK RS">Pelotas - RS</option>
+  <option value="SBKG PB">Pres. Jõao Suassuna - PB</option>
+  <option value="SBPS BA">Porto Seguro - BA</option>
+  <option value="SBRB AC">Presidente Médici - AC</option>
+  <option value="SBAR SE">Santa Maria -  SE</option>
+  <option value="SBSM RS">Santa Maria -  RS</option>
+  <option value="SBSC RJ">Santa Cruz - RJ</option>
+  <option value="SBRJ RJ">Santos Drumont - RJ</option>
+  <option value="SBTA SP">Taubaté - SP</option>
+  <option value="SBMO AL">Zumbi dos Palmares - AL</option>
+  <!--<option value="SBGV MG">Gov. Valadares - MG</option>
+  <option value="SBVG MG">Varginha - MG</option> ESTE O DB TÁ UNDEFINED DPS VERIFICAR OU RETIRAR !!!-->
+</select></br>
+
+<button type="button" id="botaow">Alterar</button>
+
+<div id="res1">
+
+</div>
 
 <footer>
   <div id="copyrigth">
 <a>Copyrigth Gregor&Apolinar.io</a></div>
 </footer>
+<script>
+  function init1(){
+    $('#botaow').click(function(){
+      funcaoUmidade();
+    });
+  }
+</script>
 </body>
-  <script src="main.js" type="text/javascript"></script>
 </html>
