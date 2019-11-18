@@ -55,9 +55,11 @@ function funcaoBuscarAlimentos(indice){
         success: function(dados){
             let opcoes = "";
             for(var i = 0; i < dados.length; i++){
+                kcal = dados[i].attributes.energy.kcal;
+                kcalArredondado = parseFloat(kcal.toFixed(2));
                 opcoes += ` <div class= bloco-alimento onclick="funcaoSelecionarAlimento('${dados[i].description}', ${i});">
                                 <p>Nome ${dados[i].description}</br>
-                                <p>kcal : ${dados[i].attributes.energy.kcal}
+                                <p>${kcalArredondado} Kcal</p>
                             </div>`;
             }
             $('#res').html(opcoes);
@@ -74,7 +76,7 @@ function criarBotoes(){
             let texto = "";
             for(let i = 0; i < dados.length; i++){
                 iplus = i + 1;
-                texto += `  <button onclick=funcaoBuscarAlimentos(${iplus})> botão ${iplus} </button>`;
+                texto += `  <button class="btn-categoria" onclick=funcaoBuscarAlimentos(${iplus})> Categoria ${iplus} </button>`;
             }
             console.log(texto);
             $('#res').html(texto);

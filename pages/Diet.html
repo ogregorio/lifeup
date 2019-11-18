@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ED7229">
   <title>Life Up</title>
-  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="../style.css">
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="./diet.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
-  <link href="../fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet">
+  <link href="/fontawesome/css/all.css" rel="stylesheet">
   <link rel="shortcut icon" href="../images/favicon.png" />
 </head>
-<body style="background: #FCB676" onload="init()">
+<body style="background: #fff" onload="init()">
     
 <header>
   <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a>
@@ -26,17 +26,26 @@
   </nav>
 </header>
 
-<footer>
-  <div id="copyrigth">
-<a>Copyrigth Gregor&Apolinar.io</a></div>
-</footer>
-
-<div id="res">
-
+<div class="btn-categorias">
+<a style="background: #FFEC6D;" onclick=funcaoBuscarAlimentos(1)><i class="fas fa-bread-slice"></i> Cereais e derivados</a>
+<a style="background: #06CD3E;" onclick=funcaoBuscarAlimentos(2)><i class="fas fa-leaf"></i> Verduras, hortaliças e derivados</a>
+<a style="background: #6F4DE9;" onclick=funcaoBuscarAlimentos(3)><i class="fas fa-apple-alt"></i> Frutas e derivados</a>
+<a style="background: #E97A4D;" onclick=funcaoBuscarAlimentos(4)><i class="fas fa-bacon"></i> Gorduras e óleos</a>
+<a style="background: #E94D99;" onclick=funcaoBuscarAlimentos(5)><i class="fas fa-fish"></i> Pescados e frutos do mar</a>
+<a style="background: #CD0621;" onclick=funcaoBuscarAlimentos(6)><i class="fas fa-drumstick-bite"></i> Carnes e derivados</a>
+<a style="background: #ADE94D;" onclick=funcaoBuscarAlimentos(7)><i class="fas fa-cheese"></i> Leite e derivados</a>
+<a style="background: #4DD1E9;" onclick=funcaoBuscarAlimentos(8)><i class="fas fa-wine-glass-alt"></i> Bebidas</a>
+<a style="background: #E9D34D;" onclick=funcaoBuscarAlimentos(9)><i class="fas fa-egg"></i> Ovos e derivados</a>
+<a style="background: #CD4E06;" onclick=funcaoBuscarAlimentos(10)><i class="fas fa-candy-cane"></i> Produtos açucarados</a>
+<a style="background: #4DE9A2" onclick=funcaoBuscarAlimentos(11)><i class="fas fa-hotdog"></i> Variados</a>
+<a style="background: #538AD8;" onclick=funcaoBuscarAlimentos(12)><i class="fas fa-cookie"></i> Alimentos industrializados</a>
+<a style="background: #8553D8;" onclick=funcaoBuscarAlimentos(13)><i class="fas fa-hamburger"></i> Alimentos preparados</a>
+<a style="background: #D853CD;" onclick=funcaoBuscarAlimentos(14)><i class="fas fa-utensil-spoon"></i> Leguminosas e derivados</a>
+<a style="background: #00C4BC;" onclick=funcaoBuscarAlimentos(15)><i class="fas fa-seedling"></i> Nozes e sementes</a>
 </div>
-<div id="resposta">
 
-</div>
+<div id="res"></div>
+<div id="resposta"></div>
 
 <div id="botao3" style="background-color: aqua;">
   <p>verificar imc global</p>
@@ -71,6 +80,10 @@
       });
     }
 </script>
+<footer>
+  <div id="copyrigth">
+    <a>Copyrigth LIFE ❤ UP</a></div>
+</footer>
 </body>
   
 </html>

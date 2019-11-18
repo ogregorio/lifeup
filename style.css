@@ -59,11 +59,6 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
 #menu ul li.Stair{background: #E6AA33}#menu ul li.Stair:hover{background: #FCD476}
 #menu ul li.Diet{background: #ED7229}#menu ul li.Diet:hover{background: #FCB676}
 
-/*Botões das categorias do Diet.fy*/
-.bloco-alimento{
-    transition-duration: 1s;
-    opacity: 1;
-}
 
 /*box de alerta*/
 .alerta{

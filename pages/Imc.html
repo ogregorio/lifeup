@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E75757">
+  <title>Life Up</title>
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="../fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../images/favicon.png" />
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+  <script src="./imc.js" type="text/javascript"></script>
+</head>
+<body style="background: #FF9083">
+<header>
+  <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a><nav>
+<div id="menu">
+<ul>
+  <li class="IMC" style="background: #FF9083"><a style="color:#000" href="./Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
+  <li class="Water"><a href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
+  <li class="Stair"><a href="./Escada.html"><i class="fas fa-hiking"></i><span> Stair.fy</span></a></li>
+  <li class="Diet"><a href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
+</ul>
+</div>
+</nav>
+</header>
+
+<div class="formulario">
+<div class="entrada">
+  <form>
+            <input type="number" id="peso" placeholder="SEU PESO (kg)" ></br>
+            <input type="number" id="altura" placeholder="SUA ALTURA (cm)"></br>
+            <input type="button" id="botao" value="CALCULAR" onclick="funcaoClassificar()">
+            <div id="spamdealerta"><div class="vazio"><i class="fas fa-lightbulb"> </i><p>Hey, parece que seu peso está bem acima do ideal! Que tal verificar uma <a href="">dieta balanceada</a> para perder massa corporal?</p></div></div>
+            <br>
+        </form>
+</div>
+</div>
+        <div id="resultado"><img src="../images/IMC/sprite0.png"></div>
+<footer>
+  <div id="copyrigth">
+<a>Copyrigth LIFE ❤️ UP</a></div>
+</footer>
+</body>
+  
+</html>
