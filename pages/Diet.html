@@ -20,12 +20,14 @@
         <li class="IMC"><a href="./Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
         <li class="Water"><a href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
         <li class="Stair"><a href="./Escada.html"><i class="fas fa-hiking"></i><span> Stair.fy</span></a></li>
-        <li class="Diet"><a href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></li>
+        <li class="Diet" style="background: #FCB676"><a style="color:#000;" href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
       </ul>
     </div>
   </nav>
 </header>
+<div id="contador-calorias">
 
+</div>
 <div class="btn-categorias">
 <a style="background: #FFEC6D;" onclick=funcaoBuscarAlimentos(1)><i class="fas fa-bread-slice"></i> Cereais e derivados</a>
 <a style="background: #06CD3E;" onclick=funcaoBuscarAlimentos(2)><i class="fas fa-leaf"></i> Verduras, hortaliças e derivados</a>
@@ -43,7 +45,6 @@
 <a style="background: #D853CD;" onclick=funcaoBuscarAlimentos(14)><i class="fas fa-utensil-spoon"></i> Leguminosas e derivados</a>
 <a style="background: #00C4BC;" onclick=funcaoBuscarAlimentos(15)><i class="fas fa-seedling"></i> Nozes e sementes</a>
 </div>
-
 <div id="res"></div>
 <div id="resposta"></div>
 
@@ -62,10 +63,17 @@
   <p>apagar itens do arranjo</p>
 </div>
 
+<div id="botao4" style="background-color: orange;">
+  <p>Gerar Dieta</p>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="./imc.js"></script>
 <script src="./diet.js"></script>
 <script>
     function init(){
+      var kcal = dietaBalanceada.gerarKcal();
+      dietaBalanceada.criarBlocoKcal(kcal);
       $('#botao3').click(function(){
         imcGlobal();
       });
@@ -77,6 +85,9 @@
       });
       $('#botao4').click(function(){
         funcaoLimparArranjo();
+      });
+      $('#botao5').click(function(){
+        funcaoGerarDieta();
       });
     }
 </script>
