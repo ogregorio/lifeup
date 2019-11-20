@@ -10,7 +10,9 @@ const dietaBalanceada = {
             imcGlobal();
             $('#contador-calorias').css("display", "none");
             $('#barra-gasto-calorico').css("display", "none");
-            , 3000);
+            setTimeout(function(){
+                window.location.href = "./Imc.html";
+            }, 3000);
         }
         else{
             switch(db.results[0].state){
