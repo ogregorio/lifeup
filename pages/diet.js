@@ -118,10 +118,11 @@ function funcaoBuscarAlimentos(indice){
             for(var i = 0; i < dados.length; i++){
                 kcal = dados[i].attributes.energy.kcal;
                 kcalArredondado = parseFloat(kcal.toFixed(2));
-                opcoes += ` <div class= bloco-alimento onclick="funcaoSelecionarAlimento('${dados[i].description}', ${i}, ${indice});">
-                                <p>Nome ${dados[i].description}</br>
+                opcoes += ` <div class="bloco-alimento"><div onclick="funcaoSelecionarAlimento('${dados[i].description}', ${i});">
+                                <p>${dados[i].description}</br>
+                                <p>${dados[i].base_qty} (${dados[i].base_unit})</p>
                                 <p>${kcalArredondado} Kcal</p>
-                            </div>`;
+                            </div></div>`;
             }
             $('#res').html(opcoes);
         }
