@@ -11,8 +11,7 @@ body{margin: 0;}
     div.btn-categorias a{width: 40%;padding: 2%;}
 }
 
-.bloco-alimento{max-height: 150px;min-width: 200px;text-align:center;transition:.5s;display: inline-block;background: #ED7229;padding: 1%;border-radius: 8px;text-align: center;cursor: pointer;margin: 5px;font-family: "Roboto",sans-serif;}
-.bloco-alimento div{border:2px dashed #fff;padding: 2%;border-radius: 8px;}
+.bloco-alimento{text-align:center;transition:.5s;display: inline-block;background: #ED7229;padding: 1%;border-radius: 8px;text-align: center;cursor: pointer;margin: 5px;font-family: "Roboto",sans-serif;}
 .bloco-alimento:hover{opacity: 0.6;}
 #res{text-align: center;}
 .bloco-alimento::first-line{font-weight: 600;}
@@ -47,3 +46,14 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
     transition-duration: 1s;
     opacity: 1;
 }
+
+/*texto das calorias que devem ser ingeridas
+*/
+.kcal-marcador{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-family: 'Roboto', sans-serif;font-size: 2em;background: rgba(255,255,255,.4);border-radius: 100%;border: dashed 5px;padding: 20%;
+}
+
