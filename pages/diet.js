@@ -108,7 +108,7 @@ function funcaoSelecionarAlimento(nome, indice, index, kcal){
     bloco.style.opacity = '0';
     setTimeout(function(){
             bloco.style.display = 'none';
-    }, 1000);
+    }, 700);
     db.results[0].calorias -= kcal;
     db.results[1].alimentos[index-1].index.push(novoAlimento);
     localStorage.setItem('db_results_real2', JSON.stringify(db));
