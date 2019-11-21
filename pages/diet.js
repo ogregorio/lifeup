@@ -10,25 +10,27 @@ const dietaBalanceada = {
             imcGlobal();
             $('#contador-calorias').css("display", "none");
             $('#barra-gasto-calorico').css("display", "none");
-            setTimeout(function(){
-                window.location.href = "./Imc.html";
-            }, 3000);
         }
         else{
             switch(db.results[0].state){
                 case SUPERMAGRO:
+                    db.results[0].calorias = db.results[0].peso * 35;
                     return db.results[0].peso * 35;
                     break;
                 case MAGRO:
+                    db.results[0].calorias = db.results[0].peso * 32;
                     return db.results[0].peso * 32;
                     break;
                 case PESOIDEAL:
+                    db.results[0].calorias = db.results[0].peso * 30;
                     return db.results[0].peso * 30;
                     break;
                 case UMPOUCOACIMA:
+                    db.results[0].calorias = db.results[0].peso * 25;
                     return db.results[0].peso * 25;
                     break;
                 case MUITOACIMA:
+                    db.results[0].calorias = db.results[0].peso * 20;
                     return db.results[0].peso * 20;
                     break;
             }
@@ -67,10 +69,10 @@ const dietaBalanceada = {
 
 function imcGlobal(){
     if(db.results[0].imc == -1){
-        var alerta =`<div class=${"alerta"}>
+        var alerta =`<a href="./Imc.html">                  <div class=$                        {"alerta"}>
                             <p>Peehhhhhhh tem que calcular seu Imc primeiro para ter acesso à uma dieta!!!</p>
                             <span>Clique nesta box para ir para Calcular seu IMC!!!</span>
-                        </div>
+                        </div></a>
                     `;
         $('#res').html(alerta);
     }
@@ -100,10 +102,11 @@ function mostrarArranjo(){
 }
 
 //Colocar alimento separado por arranjos
-function funcaoSelecionarAlimento(nome, indice, index){
+function funcaoSelecionarAlimento(nome, indice, index, kcal){
     let novoAlimento = nome;
     let bloco = document.getElementsByClassName('bloco-alimento')[indice];
     bloco.style.opacity = 0;
+    db.results[0].calorias -= kcal;
     db.results[1].alimentos[index-1].index.push(novoAlimento);
     localStorage.setItem('db_results_real2', JSON.stringify(db));
 }
@@ -118,11 +121,10 @@ function funcaoBuscarAlimentos(indice){
             for(var i = 0; i < dados.length; i++){
                 kcal = dados[i].attributes.energy.kcal;
                 kcalArredondado = parseFloat(kcal.toFixed(2));
-                opcoes += ` <div class="bloco-alimento"><div onclick="funcaoSelecionarAlimento('${dados[i].description}', ${i});">
-                                <p>${dados[i].description}</br>
-                                <p>${dados[i].base_qty} (${dados[i].base_unit})</p>
+                opcoes += ` <div class= bloco-alimento onclick="funcaoSelecionarAlimento('${dados[i].description}', ${i}, ${indice}, ${kcalArredondado});">
+                                <p>Nome ${dados[i].description}</br>
                                 <p>${kcalArredondado} Kcal</p>
-                            </div></div>`;
+                            </div>`;
             }
             $('#res').html(opcoes);
         }
