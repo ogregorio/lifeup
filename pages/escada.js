@@ -6,6 +6,8 @@ let status = 0;
 let indice = 0;
 let aux1 = tempo;
 let index_global = 0;
+let verifica = 0;
+
 
 function funcaoSumirMapa(){
     $("#mapa-do-tesouro").css("display", "none");
@@ -73,7 +75,14 @@ function funcaoMoveDecrescente(inicio){
         funcaoBaixo();
     }
     if(index_global == 9 || index_global == 15){
-        //funcaoGame();
+        verifica = 1;
+        if(index_global == 9){
+            funcaoGame();
+        }
+        else{
+            funcaoGame1();
+        }
+        
     }
     localStorage.setItem('db_results_real2', JSON.stringify(db));
 }
@@ -93,7 +102,13 @@ function funcaoMoveCrescente(fim){
         funcaoBaixo();
     }
     if(index_global == 9 || index_global == 15){
-        //funcaoGame();
+        verifica = 1;
+        if(index_global == 9){
+            funcaoGame();
+        }
+        else{
+            funcaoGame1();
+        }
     }
     localStorage.setItem('db_results_real2', JSON.stringify(db));
 }
@@ -102,7 +117,7 @@ function funcaoMoveCrescente(fim){
 function funcaoSairDessaFase(){
     $('#crono1').css("display", "none");
     $('#crono').css("display", "none");
-    var comemoracao = ` </br><img src=../images/congratulations.gif></br>`;
+    var comemoracao = ` </br><img id="comemora" src=../images/congratulations.gif></br>`;
     $('#res').css("display", "block");
     $('#res').html(comemoracao);
     if( index_global >= 0 && index_global <= 4){
@@ -123,13 +138,19 @@ function funcaoSairDessaFase(){
             }
         }
     }
-    setTimeout(function(){
+        setTimeout(function(){
             $('#finalizar').css("display", "none");
+            $('#comemora').css("display", "none");
+            
             funcaoMostrarMapa();
             funcaoReiderizarNovoFrame();
             $('#mapa-do-tesouro').css("display", "none");
             funcaoMostrarMapa();
-    }, 3000);
+            if(verifica){
+                $('#mapa-do-tesouro').css("display", "none");
+            }
+        }, 3000);
+    
 
 }
 
