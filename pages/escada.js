@@ -36,7 +36,7 @@ function funcaoReiderizarNovoFrame(){
                 //objeto[i].style.opacity = '.5';
                 break;
             case 3:
-                content = `<img style="margin-left: -20%;" src="../images/IMC/sprite4.png" width="80%;">`;
+                content = `<img style="margin-left: -20%;" src="../images/Escada/Sprite0.png" width="80%;">`;
                 objeto.innerHTML = content;
                 console.log(objeto);
                 break;
@@ -46,7 +46,7 @@ function funcaoReiderizarNovoFrame(){
                 //objeto[i].style.opacity = '1';
                 break;
             case 5:
-                content = `<img style="opacity: 1; width: 80%;" src="../images/IMC/sprite2.png">`;
+                content = `<img style="opacity: 1; width: 80%;" src="../images/Escada/Sprite0_1.png">`;
                 objeto.innerHTML = content;
             
         }
