@@ -4,7 +4,8 @@ function funcaoDb(){
                     {
                         "imc": -1,
                         "state": 0,
-                        "peso": 0
+                        "peso": 0,
+                        "calorias": 0
                     },
                     {
                         "alimentos":[
