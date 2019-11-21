@@ -256,7 +256,7 @@ function funcaoAtividade1(index, tempo_exe){
         <h1 class=texto-acima>Atividade 1 : Corrida de 5 minutos</h1>
                     </br>
                     </br>
-                    <img style="margin-left: 38%;" src=../images/maratona.gif>
+                    <img style="margin-left: 38%;" src=../images/Escada/Sprite3.png>
                     </br>
                     
                     <div id=botoes>
