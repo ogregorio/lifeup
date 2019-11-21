@@ -105,7 +105,7 @@ function mostrarArranjo(){
 function funcaoSelecionarAlimento(nome, indice, index, kcal){
     let novoAlimento = nome;
     let bloco = document.getElementsByClassName('bloco-alimento')[indice];
-    bloco.style.display = none;
+    bloco.style.display = 'none';
     db.results[0].calorias -= kcal;
     db.results[1].alimentos[index-1].index.push(novoAlimento);
     localStorage.setItem('db_results_real2', JSON.stringify(db));
