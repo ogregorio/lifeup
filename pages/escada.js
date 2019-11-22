@@ -36,7 +36,7 @@ function funcaoReiderizarNovoFrame(){
                 //objeto[i].style.opacity = '.5';
                 break;
             case 3:
-                content = `<img src="../images/Escada/checkpoint.png" width="100%;">`;
+                content = `<img style="max-width:90px" src="../images/Escada/Sprite0.png" width="100%;">`;
                 objeto.innerHTML = content;
                 console.log(objeto);
                 break;
@@ -46,7 +46,7 @@ function funcaoReiderizarNovoFrame(){
                 //objeto[i].style.opacity = '1';
                 break;
             case 5:
-                content = `<img style="opacity: 1; width: 100%;" src="../images/Escada/checkpoint.png">`;
+                content = `<img style="opacity: 1;max-width:90px; width: 100%;" src="../images/Escada/checkpoint.png">`;
                 objeto.innerHTML = content;
             
         }
