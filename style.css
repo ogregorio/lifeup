@@ -23,23 +23,43 @@ div.sobre-nos .integrante img{border-radius: 100%;width: 60%;}
 /* SOBRE OS PROGRAMAS */
 /* CONFIGURAÇÃO COMUM */
 .sobre{width: 49%;float: left;}.ilustracao{width: 49%;display: inline-block;}
-.sobre h1{margin: 5%;font-family: 'Fredoka One',sans-serif;}
-.experimentar {float: right;padding: 2%;border-radius: 8px;background: #FF3A3E;transition: .5s;}
-.experimentar a{font-family: 'Fredoka One',sans-serif;text-decoration: none;font-size: 2em;color: #fff;}
-.experimentar:hover {background: #971010;}
+.sobre h1{text-align: center;margin: 5%;font-family: 'Fredoka One',sans-serif;}
 .sobre p{padding: 5%;margin: 5%;font-family: 'Roboto',sans-serif;border-radius: 8px}
 .ilustracao img{height: 100%;margin: 0 0 -5px;}
 /*CONFIGURAÇÃO ESPECIFICA */
 /* SOBRE IMCFY */
 .sobre-imcfy{background: #FF9083;}
-.sobre-imcfy p{background:#BC2D2F;color: #fff;}
-
+.sobre-imcfy p{font-size:1.3em;background:#BC2D2F;color: #fff;}
+.sobre-imcfy .sobre {float: left;}
+.sobre-imcfy .sobre .experimentar {float: right;}
+.experimentar {float: right;padding: 2%;border-radius: 8px;background: #FF3A3E;transition: .5s;}
+.experimentar a{font-family: 'Fredoka One',sans-serif;text-decoration: none;font-size: 2em;color: #fff;}
+.experimentar:hover {background: #971010;}
+/* SOBRE WATERFY */
+.sobre-waterfy{background: #85C9FF;}
+.sobre-waterfy p{font-size:1.3em;background:#337495;color: #fff;}
+.sobre-waterfy .sobre {float:right;}
+.sobre-waterfy .sobre .experimentar {float: left;}
+.experimentar.sobre-waterfy {background: #1F84B7;transition: .5s;}
+.experimentar.sobre-waterfy:hover {background: #125070;}
+/* SOBRE SPORTFY */
+.sobre-sportfy{background: #E0E05F;}
+.sobre-sportfy p{font-size:1.3em;background:#475907;color: #fff;}
+.sobre-sportfy .sobre {float:left;}
+.sobre-sportfy .sobre .experimentar {float: right;}
+.experimentar.sobre-sportfy {background: #7A9F00;transition: .5s;}
+.experimentar.sobre-sportfy:hover {background: #516900;}
+/* SOBRE DIETFY */
+.sobre-dietfy{background: #ED7229;}
+.sobre-dietfy p{font-size:1.3em;background:#BC2D2F;color: #fff;}
+.sobre-dietfy .sobre {float:right;}
+.sobre-dietfy .sobre .experimentar {float: left;}
 /* MENU DA HOME*/
 nav.nav-home {width: 50%;}
 div#menu-home{margin: auto}
 #menu-home ul li.IMC{background: #E75757}#menu ul li.IMC:hover{background: #FF9083}
 #menu-home ul li.Water{background: #38A3D8}#menu ul li.Water:hover{background: #99CDE3}
-#menu-home ul li.Stair{background: #E6AA33}#menu ul li.Stair:hover{background: #FCD476}
+#menu-home ul li.Sport{background: #E6AA33}#menu ul li.Sport:hover{background: #FCD476}
 #menu-home ul li.Diet{background: #ED7229}#menu ul li.Diet:hover{background: #FCB676}
 #menu-home ul li{display:inline; width: 50%; text-align: center;font-size: 4em;}
 
@@ -50,13 +70,13 @@ header h1{font-family: 'Roboto' Condensed, sans-serif;text-align: center;}
 #menu {text-align:center;}
 #menu ul li {display: inline;}
 div#menu ul{margin: 0;padding: 0;width: 100%;}
-div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;}
+div#menu ul li {border-radius:8px;width: 20%;text-align: center;display: inline-block;margin:auto;}
 #menu ul li a {font-family: 'Roboto', sans-serif;font-size: 1em;text-decoration: none;color: #fff;display: block;text-align: center;padding: 1em;}
 
 /* MENU ITENS INDIVIDUALMENTE*/
 #menu ul li.IMC{background: #E75757}#menu ul li.IMC:hover{background: #FF9083}
 #menu ul li.Water{background: #38A3D8}#menu ul li.Water:hover{background: #99CDE3}
-#menu ul li.Stair{background: #E6AA33}#menu ul li.Stair:hover{background: #FCD476}
+#menu ul li.Sport{background: #95B71F}#menu ul li.Sport:hover{background: #ADC947}
 #menu ul li.Diet{background: #ED7229}#menu ul li.Diet:hover{background: #FCB676}
 
 /*Botões das categorias do Diet.fy*/
@@ -77,96 +97,6 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
 .alerta > span{
     font-weight: bold;
 }
-
-/*Formatação Escada.fy*/
-#mapa-do-tesouro{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.indice{
-    margin-top: 25%;
-    font-size: 5em;
-    color: #ff922b;
-}
-
-#botoes{
-    margin-top: 2%;
-    padding: 1%;
-}
-
-.texto-acima{
-    color: black;
-    font-weight: 900;
-    font-family: 'Roboto', sans-serif;
-    font-size: 250%;
-    text-align: center;
-}
-
-.sumir{
-    display: none;
-}
-/*formatção cronometro*/
-#crono{
-    display: grid;
-    height: 100px;
-    width: 100%;
-    grid-template-columns: repeat(300, 1fr);
-    grid-template-rows: 1fr;
-    background-color: white;
-    margin: 0 auto;
-    display: none;
-    
-}
-#crono div{
-    font-size: 3em;
-}
-
-#crono p{
-    font-family: relogio;
-    margin-top: 25%;
-}
-.complete{
-    background-color: blue;
-}
-
-.verde{
-    color: green;
-    opacity: 1;
-    display: inline;
-}
-/*formatação do game*/
-#pontuacao{
-    display: none;
-    grid-template-columns: repeat(50, 1fr);
-    grid-template-rows: 1fr;
-    border: 1px solid green;
-    width: 500px;
-    height: 100px;
-    
-    margin: 0 auto;
-}
-#gameover{
-    display: none;
-    grid-template-columns: repeat(50, 1fr);
-    grid-template-rows: 1fr;
-    width: 500px;
-    height: 100px;
-    border: 1px solid green;
-    
-    margin: 0 auto;
-}
-.checkedwin{
-    background-color: greenyellow;
-}
-.checkedlose{
-    background-color: red;
-}
-
-
 
 @media (max-width: 45em) {#menu ul li a span{display: none;}}
 

@@ -1,0 +1,108 @@
+/*Formatação Escada.fy*/
+#mapa-do-tesouro{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.indice{
+    margin-top: 25%;
+    font-size: 5em;
+    color: #ff922b;
+}
+
+#botoes-atividade{
+    display: block;
+    text-align: center;
+    font-size: 5em;
+}
+
+.titulo-atividade{
+    color: #333;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    font-size: 250%;
+    text-align: center;
+    padding: 2%;
+    font-variant-caps: petite-caps;
+}
+.corpo-atividade img {display: block;
+    margin: auto;}
+
+.sumir{
+    display: none;
+}
+/*formatção cronometro*/
+#crono{
+    display: grid;
+    height: 100px;
+    width: 70%;
+    grid-template-columns: repeat(300, 1fr);
+    grid-template-rows: 1fr;
+    background-color: white;
+    margin: 0 auto;
+    display: none;
+    padding: 2%;
+    border-radius: 25px;
+    
+}
+.crono-text p{
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    }
+#crono div{
+    font-size: 3em;
+}
+
+#crono p{
+    font-family: "Roboto",sans-serif;
+    margin-top: 25%;
+}
+.complete{
+    background-color: blue;
+}
+
+.verde{
+    color: green;
+    opacity: 1;
+    display: inline;
+}
+
+#finalizar{
+    width: 70%;
+    display: block;
+    font-size: 2em;
+    margin: auto;
+    font-variant-caps: petite-caps;}
+
+#comemora {display:block;margin: auto;}
+/*formatação do game*/
+#pontuacao{
+    display: none;
+    grid-template-columns: repeat(50, 1fr);
+    grid-template-rows: 1fr;
+    border: 1px solid green;
+    width: 500px;
+    height: 100px;
+    
+    margin: 0 auto;
+}
+#gameover{
+    display: none;
+    grid-template-columns: repeat(50, 1fr);
+    grid-template-rows: 1fr;
+    width: 500px;
+    height: 100px;
+    border: 1px solid green;
+    
+    margin: 0 auto;
+}
+.checkedwin{
+    background-color: greenyellow;
+}
+.checkedlose{
+    background-color: red;
+}
