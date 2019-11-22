@@ -29,7 +29,7 @@
     font-variant-caps: petite-caps;
 }
 .corpo-atividade img {display: block;
-    margin: auto;}
+    margin: auto;max-width: 100%}
 
 .sumir{
     display: none;
