@@ -33,19 +33,23 @@ function funcaoReiderizarNovoFrame(){
                 console.log(objeto);
                 break;
             case 2:
-                //objeto[i].style.opacity = '.5';
+                content = `<i opacity: 0.5;" class="fas fa-arrow-circle-left"></i>`;
+                objeto.innerHTML = content;console.log(objeto);
                 break;
             case 3:
+                //objeto[i].style.opacity = '.5';
+                break;
+            case 4:
                 content = `<img style="max-width:90px" src="../images/Escada/Sprite0.png" width="100%;">`;
                 objeto.innerHTML = content;
                 console.log(objeto);
                 break;
-            case 4:
+            case 5:
                 console.log(objeto);
                 //objeto[i].style.color = 'orange';
                 //objeto[i].style.opacity = '1';
                 break;
-            case 5:
+            case 6:
                 content = `<img style="opacity: 1;max-width:90px; width: 100%;" src="../images/Escada/checkpoint.png">`;
                 objeto.innerHTML = content;
             
