@@ -372,6 +372,7 @@ var novoValidador = 0;
 function funcaoNovaRequisicaoParaGerarMelhorAlimento(indice){
     $.ajax({
         url: `https://taco-food-api.herokuapp.com/api/v1/category/${indice}/food`,
+        dataType: 'jsonp',
         success: function(dados){
             for(var i = 0; i < dados.length; i++){
                 var nome = dados[i].description;
