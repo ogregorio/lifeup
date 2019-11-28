@@ -53,11 +53,12 @@ div.sobre-nos .integrante img{border-radius: 100%;width: 60%;}
 .experimentar.sobre-sportfy {background: #7A9F00;transition: .5s;}
 .experimentar.sobre-sportfy:hover {background: #516900;}
 /* SOBRE DIETFY */
-.sobre-dietfy{background: #ED7229;}
-.sobre-dietfy p{font-size:1.3em;background:#BC2D2F;color: #fff;}
+.sobre-dietfy{background: #FA9661;}
+.sobre-dietfy p{font-size:1.3em;background:#D6641A;color: #fff;}
 .sobre-dietfy .sobre {float:right;}
 .sobre-dietfy .sobre .experimentar {float: left;}
-
+.experimentar.sobre-dietfy {background: #D65C1A;transition: .5s;}
+.experimentar.sobre-dietfy:hover {background: #9D3F0C;}
 /* MENU DA HOME*/
 nav.nav-home {width: 50%;}
 div#menu-home{margin: auto}
@@ -80,7 +81,7 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
 /* MENU ITENS INDIVIDUALMENTE*/
 #menu ul li.IMC{background: #E75757}#menu ul li.IMC:hover{background: #FF9083}
 #menu ul li.Water{background: #38A3D8}#menu ul li.Water:hover{background: #99CDE3}
-#menu ul li.Stair{background: #E6AA33}#menu ul li.Stair:hover{background: #FCD476}
+#menu ul li.Sport{background: #74BC2D}#menu ul li.Sport:hover{background: #9ED26B}
 #menu ul li.Diet{background: #ED7229}#menu ul li.Diet:hover{background: #FCB676}
 
 /*Botões das categorias do Diet.fy*/
