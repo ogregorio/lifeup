@@ -1,6 +1,6 @@
 body{margin:0}.logo{width:200px;padding:2%;display:block;margin:auto}.btn-categorias a{cursor:pointer;border:solid 1px transparent;padding:1%;margin:2px;border-radius:8px;font-family:Roboto,sans-serif;display:inline-block}.btn-categorias a:hover{border:solid 1px #000}.btn-categorias{text-align:center;padding:2%}@media (max-width:45em){div.btn-categorias a{width:40%;padding:2%}}
 .bloco-alimento{text-align:center;transition:.5s;display: inline-block;background: #ED7229;padding: 1%;border-radius: 8px;text-align: center;cursor: pointer;margin: 5px;font-family: "Roboto",sans-serif;}
-.bloco-alimento{max-height: 150px;min-width: 200px;text-align:center;transition:.5s;display: inline-block;background: #ED7229;padding: 1%;border-radius: 8px;text-align: center;cursor: pointer;margin: 5px;font-family: "Roboto",sans-serif;}
+.bloco-alimento{text-align:center;transition:.5s;display: inline-block;background: #ED7229;padding: 1%;border-radius: 8px;text-align: center;cursor: pointer;margin: 5px;font-family: "Roboto",sans-serif;}
 .bloco-alimento div{border:2px dashed #fff;padding: 2%;border-radius: 8px;}
 .bloco-alimento:hover{opacity: 0.6;}
 #res{text-align: center;}
@@ -33,34 +33,53 @@ nav.nav-home{width:50%}div#menu-home{margin:auto}#menu-home ul li.IMC{background
 #pre-selecionados{
     display: block;
     margin: 0 auto;
-    max-width: 1280px;
     width: 100%;
     border: 1px dashed black;
+    padding: 5%;
 }
 #pre-selecionados > div{
-    display: inline-block;
-    width: 250px;
-    height: 520px;
-    border: 10px solid rgb(0, 0, 0);
-    border-radius: 12%;
+    display: inline-table;
+    border-radius: 8px;
+    text-align: center;
+    width: 10%;
+    margin: 0.5em;
+    height: 200px;
 }
 #pre-selecionados > div > div > i{
-    font-size: 7em;
-    margin-top: 15%;
-}
-.circle{
-    border-radius: 12%;
-    padding: 6%;
-    width: 80%;
-    margin: 0 auto;
-    justify-items: center;
+    font-size: 1em;
     text-align: center;
-    border: 5px dashed white;
+    display: block;
+    padding: 10%;
+}
+.circle:first-child{
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+.funcao-alimento{
+    margin: 0 auto;
+    text-align: left;
+    color:#000;
+    vertical-align: bottom;
+    margin-top: 20px;
+    padding: 2%;
+    text-align:center;
+}
+.tag-alimento{
+    margin: 0 auto;
+    text-align: left;
+    color:#000;
+    vertical-align: bottom;
+    margin-bottom: 20px;
+    padding: 2%;
+    text-align:center;
 }
 .circle-text{
-    color: white;
+    color: #fff;
     font-family: Roboto,sans-serif;
-    font-size:2em;
+    font-size:1em;
+    padding: 1%;
+    height: ;
+}
 }
 
 /*formatação do form quantidade de refeições*/

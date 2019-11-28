@@ -586,8 +586,9 @@ function funcaoExibirAlimentos(){
             var cor = arrayDeBlocos[4];
             var status = arrayDeBlocos[5];
             if(status == 0){
-                blocos += ` <div   style="background-color: ${cor};">
-                        <div class='circle'>
+                blocos += ` <div style="background-color: ${cor};">
+                        <div class="corpo-alimento">
+                        <div class='tag-alimento'>
                             <i class='${simbolo}'></i>
                         </div>
                         <div class='circle-text'>
@@ -598,14 +599,19 @@ function funcaoExibirAlimentos(){
                             <span style="font-size: 1em;">${kcal} kcal</span>
                                 
                         </div>
+                        </div>
+
+                        <div class="funcao-alimento">
                         <div class='circle' onclick="funcaoEatAlimento('${kcal}','${i}');">
                             <i class="fas fa-utensils"></i>
                         </div>
+                        </div>
+
                         </div>`;
             }
             else{
-                blocos += ` <div   style="background-color: ${cor};">
-                        <div class='circle'>
+                blocos += ` <div style="background-color: ${cor};">
+                        <div class='tag-alimento'>
                             <i class='${simbolo}'></i>
                         </div>
                         <div class='circle-text'>
@@ -649,7 +655,10 @@ function funcaoSelecionarAlimento(nome, indice, index, kcal, proteina, lipideo, 
     let novoAlimento = nome;
     let atributosDesteAlimento = kcal + "*" + proteina + "*" + lipideo + "*" + carboidrato + "*" + fibras + "*" + symbol + "*" + cor;
     let bloco = document.getElementsByClassName('bloco-alimento')[indice];
-    bloco.style.opacity = 0;
+    bloco.style.opacity = '0';
+    setTimeout(function(){
+            bloco.style.display = 'none';
+    }, 700);
     db.results[1].alimentos[index-1].push(novoAlimento);
     db.results[2].atributos[index-1].push(atributosDesteAlimento);
 
@@ -689,17 +698,25 @@ function funcaoMostrarAlimentosPreSelecionados(){
             var arrayDeCaracteristicas = caracteristicasEspecificas.split("*");
             var simboloCategoria = arrayDeCaracteristicas[5];
             var corCategoria = arrayDeCaracteristicas[6];
-            conteudo += ` <div  style="background-color: ${corCategoria};">
-                <div class='circle'>
+            conteudo += ` 
+            
+            <div  style="background-color: ${corCategoria};">
+            <div class="corpo-alimento">
+                <div class='tag-alimento'>
                     <i class='${simboloCategoria}'></i>
                 </div>
                 <div class='circle-text'>
                     <span>${nomesEspecificos}</span>
                 </div>
+            </div>
+            <div class="funcao-alimento">
                 <div class='circle' onclick="funcaoDeletarAlimento('${i}', '${j}');">
                     <i class="fas fa-trash-alt"></i>
                 </div>
-            </div>` ;
+            </div>
+            </div>
+            
+            ` ;
         }
     }
     if(quantItensPreSelecionados == 0){
@@ -807,9 +824,12 @@ function funcaoBuscarAlimentos(indice, symbol, cor){
                 var carboidratos = parseFloat(dados[i].attributes.carbohydrate.qty);
                 var fibras = parseFloat(dados[i].attributes.fiber.qty);
                 
-                opcoes += ` <div class= bloco-alimento onclick="funcaoSelecionarAlimento('${dados[i].description}', ${i}, '${indice}', '${kcalArredondado}', '${proteinas}', '${lipideos}', '${carboidratos}', '${fibras}', '${symbol}', '${cor}');">
+                opcoes += ` <div class="bloco-alimento" onclick="funcaoSelecionarAlimento('${dados[i].description}', ${i}, '${indice}', '${kcalArredondado}', '${proteinas}', '${lipideos}', '${carboidratos}', '${fibras}', '${symbol}', '${cor}');">
+                                <div>
                                 <p>Nome ${dados[i].description}</br>
+                                <p>${dados[i].base_qty} (${dados[i].base_unit})</p>
                                 <p>${kcalArredondado} Kcal</p>
+                                </div>
                             </div>`;
             }
             $('#res').html(opcoes);
