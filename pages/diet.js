@@ -113,55 +113,9 @@ var contraRepeticoes = 0;
 
 
 //funcao para colocar em um arranjo específico segundo a piramide alimentar para exibí-los facilmente
-function funcaoSepararDietaSegundoPiramide(i, simbolo, cor, status){
-    switch(i){
-        case 0:
-            db.results[0].dieta[0].carboidratosArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 1:
-            db.results[0].dieta[2].hortalicasArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 2:
-            db.results[0].dieta[1].frutasArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 3:
-            db.results[0].dieta[7].gordurasArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));    
-            break;
-        case 4:
-            db.results[0].dieta[4].carnesArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 5:
-            db.results[0].dieta[4].carnesArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 6:
-            db.results[0].dieta[3].laticiniosArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 7:
-            db.results[0].dieta[6].acucarArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 8:
-            db.results[0].dieta[4].carnesArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 9:
-            db.results[0].dieta[6].acucarArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 10:
-            db.results[0].dieta[6].acucarArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 11:
-            db.results[0].dieta[7].gordurasArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 12:
-            db.results[0].dieta[7].gordurasArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 13:
-            db.results[0].dieta[5].leguminosasArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-        case 14:
-            db.results[0].dieta[5].leguminosasArray.push((melhorNome + "&" +  melhorKcal + "&" + 100 + "&" + divisaoGramas + "&" + simbolo + "&" + cor + "&" + status));
-            break;
-    
-    }
+function funcaoSepararDietaSegundoPiramide(simbolo, cor,nome,kcal, status){
+    db.results[0].dieta[0].alimentosDieta.push((nome + "&" +  kcal + "&" + 100 + "&" + simbolo + "&" + cor + "&" + status));
+    localStorage.setItem('db_results_real2', JSON.stringify(db));    
 }
 
 //classifica o alimento segundo a pirâmide alimentar
@@ -372,9 +326,6 @@ var novoValidador = 0;
 function funcaoNovaRequisicaoParaGerarMelhorAlimento(indice){
     $.ajax({
         url: `https://taco-food-api.herokuapp.com/api/v1/category/${indice}/food`,
-        dataType: 'jsonp',
-        crossDomain: true,
-        data: data,
         success: function(dados){
             for(var i = 0; i < dados.length; i++){
                 var nome = dados[i].description;
@@ -398,7 +349,7 @@ function funcaoNovaRequisicaoParaGerarMelhorAlimento(indice){
                     classificacaoDeGruposDeAlimentos(indice-1,kcal,proteinas,lipideos,carboidratos,fibras,nome, posicaoJDoMelhor);
                 }
             }
-            funcaoSepararDietaSegundoPiramide(indice-1, '<i class="fas fa-question"></i>', '#585858', 1);
+            funcaoSepararDietaSegundoPiramide('fas fa-question', '#585858',melhorNome, melhorKcal, 1);
         }
     });
 }
@@ -451,7 +402,7 @@ function gerarDieta(i){
                     }
                 }
                 if(!achei){
-                    funcaoSepararDietaSegundoPiramide(i, simboloDaCategoria, corDaCategoria, 0);
+                    funcaoSepararDietaSegundoPiramide( simboloDaCategoria, corDaCategoria,melhorNome,melhorKcal, 0);
                     dietaArray.push((melhorNome + "&" + melhorKcal + "&" + gramagem + "&" + divisaoGramas));
                     //atualizando calorias dos alimentos gerados no db
                     db.results[0].caloriaGeral += Number(melhorKcal);
@@ -590,6 +541,30 @@ function funcaoClassificaCategoria(k){
 function funcaoRequisicaoAlimento(nome){
     window.location.href = `https://www.carrefour.com.br/busca/?termo=${nome}&foodzipzone=na`;
 }
+/*função para dividir a kcal e as gramas pela quantidade de refeições*/
+function funcaoDividirPelaQuantidadeDeRefeicoes(){
+    if(db.results[0].dieta[0].alimentosDieta.length == 0 || db.results[0].quantRefeicoes == 0){
+        //nenhum alimento selecionado
+    }
+    else{
+        for(var i = 0; i < db.results[0].dieta[0].alimentosDieta.length; i++){
+            var blocoEspecifico = db.results[0].dieta[0].alimentosDieta[i];
+            var arrayDeBlocos = blocoEspecifico.split("&");
+            for(var j = 0; j < db.results[0].quantRefeicoes; j++){
+                var nome = arrayDeBlocos[0];
+                var kcal = Math.trunc(arrayDeBlocos[1] / db.results[0].quantRefeicoes);
+                var gramagem = Math.trunc(arrayDeBlocos[2] / db.results[0].quantRefeicoes);
+                var simbolo = arrayDeBlocos[3];
+                var cor = arrayDeBlocos[4];
+                var status = arrayDeBlocos[5];
+
+                db.results[0].dieta[1].arrayAlimentosAuxiliar.push(nome + "&" + kcal + "&" + gramagem + "&" + simbolo + "&" + cor + "&" + status);
+            }//for do j
+        }//for do i
+        localStorage.setItem('db_results_real2', JSON.stringify(db));
+    }//else
+}//fim função
+
 /*função para exibir os alimentos*/
 function funcaoExibirAlimentos(){
     var blocos = "";
@@ -597,22 +572,12 @@ function funcaoExibirAlimentos(){
     var dia = data.getDate();
     var mes = data.getMonth();
     
-    if(db.results[0].blocosArrayCarb.length == 0){
-        if(db.results[0].lastLoginDia > dia && db.results[0].lastLoginMes == mes){
-            var colocarEventoDeCriarDieta = `<img onclick="funcaoMostrarAlimentosDetalhadamente(0)" src="../images/Diet/base-piramide.png" alt="a">`;
-            $('#base').html(colocarEventoDeCriarDieta);
-            $('#base').css('opacity', '1');
-            localStorage.setItem('db_results_real2', JSON.stringify(db));
-        }
-        else{
-            var retirarEventoDeCriarDieta = `<img src="../images/Diet/base-piramide.png" alt="a">`;
-            $('#base').html(retirarEventoDeCriarDieta);
-            $('#base').css('opacity', '0.5');
-        }
+    if(db.results[0].dieta[0].alimentosDieta.length == 0){
+    //nenhum alimento selecionado
     }
     else{
-        for(var i = 0; i < db.results[0].blocosArrayCarb.length; i++){
-            var blocoEspecifico = db.results[0].blocosArrayCarb[i];
+        for(var i = 0; i < db.results[0].dieta[1].arrayAlimentosAuxiliar.length; i++){
+            var blocoEspecifico = db.results[0].dieta[1].arrayAlimentosAuxiliar[i];
             var arrayDeBlocos = blocoEspecifico.split("&");
             var nome = arrayDeBlocos[0];
             var kcal = arrayDeBlocos[1];
@@ -667,9 +632,9 @@ function funcaoExibirAlimentos(){
 //função para atualizar o contador de kcal
 function funcaoEatAlimento(kcal, indice){
     db.results[0].calorias -= kcal;
-    db.results[0].blocosArrayCarb.splice(indice, 1);
+    db.results[0].dieta[1].arrayAlimentosAuxiliar.splice(indice, 1);
     dietaBalanceada.criarBlocoKcal(db.results[0].calorias);
-    if(db.results[0].blocosArrayCarb.length == 0){
+    if(db.results[0].dieta[1].arrayAlimentosAuxiliar.length == 0){
         $('#pre-selecionados').html("");
     }
     localStorage.setItem('db_results_real2', JSON.stringify(db));
@@ -677,271 +642,8 @@ function funcaoEatAlimento(kcal, indice){
     
 }
 
-function funcaoMostrarAlimentosDetalhadamente(indice){
-    var alimentoEspecificoDestaCategoria, arrayDeRetorno,nome,kcal,gramagem,simbolo,cor,status;
-    var retiraEventoDeCriarDieta;
-    var data = new Date();
-    var dia = data.getDate();
-    var mes = data.getMonth();
-    db.results[0].lastLoginDia = dia;
-    db.results[0].lastLoginMes = mes;
-    switch(indice){
-        case 0:
-            if(db.results[0].blocosArrayCarb.length == 0){
-                for(var i = 0; i < db.results[0].dieta[indice].carboidratosArray.length; i++){
-                    alimentoEspecificoDestaCategoria = db.results[0].dieta[indice].carboidratosArray[i];
-                    arrayDeRetorno = alimentoEspecificoDestaCategoria.split("&");
-                    nome = arrayDeRetorno[0];
-                    kcal = parseInt(arrayDeRetorno[1] / db.results[0].quantRefeicoes);
-                    gramagem = parseFloat(arrayDeRetorno[2] / db.results[0].quantRefeicoes);
-                    simbolo = arrayDeRetorno[4];
-                    cor = arrayDeRetorno[5];
-                    status = arrayDeRetorno[6];
-                    if(status == 0){
-                        for(var j = 0; j < db.results[0].quantRefeicoes; j++){
-                            db.results[0].blocosArrayCarb.push(nome+"&"+kcal+"&"+gramagem+"&"+simbolo+"&"+cor + "&" + status);
-                        }
-                        
-                    }
-                }
-                localStorage.setItem('db_results_real2', JSON.stringify(db));
-                retiraEventoDeCriarDieta = `<img onclick="funcaoExibirAlimentos();" src="../images/Diet/base-piramide.png" alt="a">`;
-                $('#base').html(retiraEventoDeCriarDieta);
-                funcaoExibirAlimentos();
-            }
-            else{
-                funcaoExibirAlimentos();
-            }
-            break;
-        case 1:
-                if(db.results[0].blocosArrayFrut.length == 0){
-                    for(var i = 0; i < db.results[0].dieta[indice].frutasArray.length; i++){
-                        alimentoEspecificoDestaCategoria = db.results[0].dieta[indice].frutasArray[i];
-                        arrayDeRetorno = alimentoEspecificoDestaCategoria.split("&");
-                        nome = arrayDeRetorno[0];
-                        kcal = parseInt(arrayDeRetorno[1] / db.results[0].quantRefeicoes);
-                        gramagem = parseFloat(arrayDeRetorno[2] / db.results[0].quantRefeicoes);
-                        simbolo = arrayDeRetorno[4];
-                        cor = arrayDeRetorno[5];
-                        status = arrayDeRetorno[6];
-                        if(status == 0){
-                            for(var j = 0; j < db.results[0].quantRefeicoes; j++){
-                                db.results[0].blocosArrayFrut.push(nome+"&"+kcal+"&"+gramagem+"&"+simbolo+"&"+cor);
-                            }
-                            
-                        }
-                        else{
-                            console.log(status);
-                        }
-                    }
-                    localStorage.setItem('db_results_real2', JSON.stringify(db));
-                    retiraEventoDeCriarDieta = `<img onclick="funcaoExibirAlimentosFrut();" src="../images/Diet/segundo-andar1-piramide.png" alt="a">`;
-                    $('#segundo-1').html(retiraEventoDeCriarDieta);
-                    funcaoExibirAlimentosFrut();
-                }
-                else{
-                    funcaoExibirAlimentosFrut();
-                }
-            break;
-        case 2:
-                if(db.results[0].blocosArrayHort.length == 0){
-                    for(var i = 0; i < db.results[0].dieta[indice].hortalicasArray.length; i++){
-                        alimentoEspecificoDestaCategoria = db.results[0].dieta[indice].hortalicasArray[i];
-                        arrayDeRetorno = alimentoEspecificoDestaCategoria.split("&");
-                        nome = arrayDeRetorno[0];
-                        kcal = parseInt(arrayDeRetorno[1] / db.results[0].quantRefeicoes);
-                        gramagem = parseFloat(arrayDeRetorno[2] / db.results[0].quantRefeicoes);
-                        simbolo = arrayDeRetorno[4];
-                        cor = arrayDeRetorno[5];
-                        status = arrayDeRetorno[6];
-                        if(status == 0){
-                            for(var j = 0; j < db.results[0].quantRefeicoes; j++){
-                                db.results[0].blocosArrayHort.push(nome+"&"+kcal+"&"+gramagem+"&"+simbolo+"&"+cor);
-                            }
-                            
-                        }
-                        else{
-                            console.log(status);
-                        }
-                    }
-                    localStorage.setItem('db_results_real2', JSON.stringify(db));
-                    retiraEventoDeCriarDieta = `<img onclick="funcaoExibirAlimentosHort();" src="../images/Diet/segundo-andar-piramide.png" alt="a">`;
-                    $('#segundo-0').html(retiraEventoDeCriarDieta);
-                    funcaoExibirAlimentosHort();
-                }
-                else{
-                    funcaoExibirAlimentosHort();
-                }
-            break;
-        case 3:
-                if(db.results[0].blocosArrayLat.length == 0){
-                    for(var i = 0; i < db.results[0].dieta[indice].laticiniosArray.length; i++){
-                        alimentoEspecificoDestaCategoria = db.results[0].dieta[indice].laticiniosArray[i];
-                        arrayDeRetorno = alimentoEspecificoDestaCategoria.split("&");
-                        nome = arrayDeRetorno[0];
-                        kcal = parseInt(arrayDeRetorno[1] / db.results[0].quantRefeicoes);
-                        gramagem = parseFloat(arrayDeRetorno[2] / db.results[0].quantRefeicoes);
-                        simbolo = arrayDeRetorno[4];
-                        cor = arrayDeRetorno[5];
-                        status = arrayDeRetorno[6];
-                        if(status == 0){
-                            for(var j = 0; j < db.results[0].quantRefeicoes; j++){
-                                db.results[0].blocosArrayLat.push(nome+"&"+kcal+"&"+gramagem+"&"+simbolo+"&"+cor);
-                            }
-                            
-                        }
-                        else{
-                            console.log(status);
-                        }
-                    }
-                    localStorage.setItem('db_results_real2', JSON.stringify(db));
-                    retiraEventoDeCriarDieta = `<img onclick="funcaoExibirAlimentosLat();" src="../images/Diet/terceiro-andar2-piramide.png" alt="a">`;
-                    $('#terceiro-0').html(retiraEventoDeCriarDieta);
-                    funcaoExibirAlimentosLat();
-                }
-                else{
-                    funcaoExibirAlimentosLat();
-                }
-            break;
-        case 4:
-                if(db.results[0].blocosArrayCarnes.length == 0){
-                    for(var i = 0; i < db.results[0].dieta[indice].carnesArray.length; i++){
-                        alimentoEspecificoDestaCategoria = db.results[0].dieta[indice].carnesArray[i];
-                        arrayDeRetorno = alimentoEspecificoDestaCategoria.split("&");
-                        nome = arrayDeRetorno[0];
-                        kcal = parseInt(arrayDeRetorno[1] / db.results[0].quantRefeicoes);
-                        gramagem = parseFloat(arrayDeRetorno[2] / db.results[0].quantRefeicoes);
-                        simbolo = arrayDeRetorno[4];
-                        cor = arrayDeRetorno[5];
-                        status = arrayDeRetorno[6];
-                        if(status == 0){
-                            for(var j = 0; j < db.results[0].quantRefeicoes; j++){
-                                db.results[0].blocosArrayCarnes.push(nome+"&"+kcal+"&"+gramagem+"&"+simbolo+"&"+cor);
-                            }
-                            
-                        }
-                        else{
-                            console.log(status);
-                        }
-                    }
-                    localStorage.setItem('db_results_real2', JSON.stringify(db));
-                    retiraEventoDeCriarDieta = `<img onclick="funcaoExibirAlimentosCarnes();" src="../images/Diet/terceiro-andar1-piramide.png" alt="a">`;
-                    $('#terceiro-1').html(retiraEventoDeCriarDieta);
-                    funcaoExibirAlimentosCarnes();
-                }
-                else{
-                    funcaoExibirAlimentosCarnes();
-                }
-            break;
-        case 5:
-                if(db.results[0].blocosArrayLeg.length == 0){
-                    for(var i = 0; i < db.results[0].dieta[indice].leguminosasArray.length; i++){
-                        alimentoEspecificoDestaCategoria = db.results[0].dieta[indice].leguminosasArray[i];
-                        arrayDeRetorno = alimentoEspecificoDestaCategoria.split("&");
-                        nome = arrayDeRetorno[0];
-                        kcal = parseInt(arrayDeRetorno[1] / db.results[0].quantRefeicoes);
-                        gramagem = parseFloat(arrayDeRetorno[2] / db.results[0].quantRefeicoes);
-                        simbolo = arrayDeRetorno[4];
-                        cor = arrayDeRetorno[5];
-                        status = arrayDeRetorno[6];
-                        if(status == 0){
-                            for(var j = 0; j < db.results[0].quantRefeicoes; j++){
-                                db.results[0].blocosArrayLeg.push(nome+"&"+kcal+"&"+gramagem+"&"+simbolo+"&"+cor);
-                            }
-                            
-                        }
-                        else{
-                            console.log(status);
-                        }
-                    }
-                    localStorage.setItem('db_results_real2', JSON.stringify(db));
-                    retiraEventoDeCriarDieta = `<img onclick="funcaoExibirAlimentosLeg();" src="../images/Diet/terceiro-andar-piramide.png" alt="a">`;
-                    $('#terceiro-2').html(retiraEventoDeCriarDieta);
-                    funcaoExibirAlimentosLeg();
-                }
-                else{
-                    funcaoExibirAlimentosLeg();
-                }
-            break;
-        case 6:
-                if(db.results[0].blocosArrayAcucar.length == 0){
-                    for(var i = 0; i < db.results[0].dieta[indice].acucarArray.length; i++){
-                        alimentoEspecificoDestaCategoria = db.results[0].dieta[indice].acucarArray[i];
-                        arrayDeRetorno = alimentoEspecificoDestaCategoria.split("&");
-                        nome = arrayDeRetorno[0];
-                        kcal = parseInt(arrayDeRetorno[1] / db.results[0].quantRefeicoes);
-                        gramagem = parseFloat(arrayDeRetorno[2] / db.results[0].quantRefeicoes);
-                        simbolo = arrayDeRetorno[4];
-                        cor = arrayDeRetorno[5];
-                        status = arrayDeRetorno[6];
-                        if(status == 0){
-                            for(var j = 0; j < db.results[0].quantRefeicoes; j++){
-                                db.results[0].blocosArrayAcucar.push(nome+"&"+kcal+"&"+gramagem+"&"+simbolo+"&"+cor);
-                            }
-                            
-                        }
-                        else{
-                            console.log(status);
-                        }
-                    }
-                    localStorage.setItem('db_results_real2', JSON.stringify(db));
-                    retiraEventoDeCriarDieta = `<img onclick="funcaoExibirAlimentosAcucar();" src="../images/Diet/quarto-andar1-piramide.png" alt="a">`;
-                    $('#quarto-0').html(retiraEventoDeCriarDieta);
-                    funcaoExibirAlimentosAcucar();
-                }
-                else{
-                    funcaoExibirAlimentosAcucar();
-                }
-            break;
-        case 7:
-                if(db.results[0].blocosArrayGordu.length == 0){
-                    for(var i = 0; i < db.results[0].dieta[indice].gordurasArray.length; i++){
-                        alimentoEspecificoDestaCategoria = db.results[0].dieta[indice].gordurasArray[i];
-                        arrayDeRetorno = alimentoEspecificoDestaCategoria.split("&");
-                        nome = arrayDeRetorno[0];
-                        kcal = parseInt(arrayDeRetorno[1] / db.results[0].quantRefeicoes);
-                        gramagem = parseFloat(arrayDeRetorno[2] / db.results[0].quantRefeicoes);
-                        simbolo = arrayDeRetorno[4];
-                        cor = arrayDeRetorno[5];
-                        status = arrayDeRetorno[6];
-                        if(status == 0){
-                            for(var j = 0; j < db.results[0].quantRefeicoes; j++){
-                                db.results[0].blocosArrayGordu.push(nome+"&"+kcal+"&"+gramagem+"&"+simbolo+"&"+cor);
-                            }
-                            
-                        }
-                        else{
-                            console.log(status);
-                        }
-                    }
-                    localStorage.setItem('db_results_real2', JSON.stringify(db));
-                    retiraEventoDeCriarDieta = `<img onclick="funcaoExibirAlimentosGordu();" src="../images/Diet/quarto-andar-piramide.png" alt="a">`;
-                    $('#quarto-1').html(retiraEventoDeCriarDieta);
-                    funcaoExibirAlimentosGordu();
-                }
-                else{
-                    funcaoExibirAlimentosGordu();
-                }
-            break;
-    }
-    
-}
-//Dieta Detalhada
-function funcaoDietaDetalhada(){
-    $('#imagem-dieta > img').attr('src', '../images/Diet/loading.gif');
-    $('#imagem-dieta').css('background-color', '#ffffff00');
-    $('#imagem-dieta').css('border', 'none');
-    $('.ilustracao > img').attr('src', '../images/Diet/sprite3aguarde.png');
-    setTimeout(function(){
-        $('#imagem-dieta > img').attr('src', '../images/Diet/piramide.png');
-        $('#imagem-dieta > img').css('width', '300%');
-        $('#imagem-dieta > img').css('margin-left', '30%');
-        $('#imagem-dieta').html(piramideSeparada);
-        $('.ilustracao > img').attr('src', '../images/Home/sprite-IMC.png');
-        $('.ilustracao > img').css('margin-left', '15%');
-        $('.ilustracao > img').css('margin-bottom', '1%');
-    }, 2000);
-}
+
+
 //Colocar alimento separado por arranjos
 function funcaoSelecionarAlimento(nome, indice, index, kcal, proteina, lipideo, carboidrato, fibras,symbol, cor){
     let novoAlimento = nome;
@@ -955,7 +657,6 @@ function funcaoSelecionarAlimento(nome, indice, index, kcal, proteina, lipideo, 
 }
 
 let iplus;
-let statusCarrinhoCriado = false;
 let statusAnimacao = 0;
 
 //função para deletar alimento específico após o clique
@@ -1057,6 +758,7 @@ function funcaoGuardarQuant(){
         alert.innerHTML += alertaCampoPreenchido;
         setTimeout(function(){
             $('#alert-success').css('display', 'none');
+                window.location.href = "./Diet.html";
         }, 3000);
         db.results[0].quantRefeicoes = valorDoSelect;
         $('#form-quant-refeicoes').html(" ");
@@ -1067,18 +769,10 @@ function funcaoGuardarQuant(){
 }
 //variável para verificar a criação do input de quantidade de refeições;
 var statusQuantRefeicoesDiarias = 0;
-//função para buscar alimentos
-function funcaoBuscarAlimentos(indice, symbol, cor){
-    statusCarrinhoCriado = true;
+
+//funcao para criar form de quantidade de refeições
+function criarFormQuantRef(){
     statusQuantRefeicoesDiarias++;
-    if(statusCarrinhoCriado){
-        var botaoCarrinhoDeAlimentosSelecionados = `   <div class="carrinho-de-alimentos"  onmouseover="funcaoPequenaAnimacao();" onmouseout="resetStatus();" onclick="funcaoMostrarAlimentosPreSelecionados();">
-                    <i id="cart" class="fas fa-shopping-cart">
-                    </i>
-                </div>
-                `;
-        $('#carrinho').html(botaoCarrinhoDeAlimentosSelecionados);
-    }
     if(statusQuantRefeicoesDiarias == 1 && !db.results[0].quantRefeicoes){
         var conteudoDoForm = `  <div id="form-quant-refeicoes">
                                     <span>Qual a quantidade de refeições que você faz?</span>
@@ -1093,6 +787,12 @@ function funcaoBuscarAlimentos(indice, symbol, cor){
                                     </div>`;
         $('#formulario-quantidade-refs').html(conteudoDoForm);
     }
+    else{
+        $('#contador-calorias').css('display', 'block');
+    }
+}
+//função para buscar alimentos
+function funcaoBuscarAlimentos(indice, symbol, cor){
     $.ajax({
         url: `https://taco-food-api.herokuapp.com/api/v1/category/${indice}/food`,
         success: function(dados){
