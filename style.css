@@ -32,7 +32,31 @@ div.sobre-nos .integrante img{border-radius: 100%;width: 60%;}
 /*CONFIGURAÇÃO ESPECIFICA */
 /* SOBRE IMCFY */
 .sobre-imcfy{background: #FF9083;}
-.sobre-imcfy p{background:#BC2D2F;color: #fff;}
+.sobre-imcfy p{font-size:1.3em;background:#BC2D2F;color: #fff;}
+.sobre-imcfy .sobre {float: left;}
+.sobre-imcfy .sobre .experimentar {float: right;}
+.experimentar {float: right;padding: 2%;border-radius: 8px;background: #FF3A3E;transition: .5s;}
+.experimentar a{font-family: 'Fredoka One',sans-serif;text-decoration: none;font-size: 2em;color: #fff;}
+.experimentar:hover {background: #971010;}
+/* SOBRE WATERFY */
+.sobre-waterfy{background: #85C9FF;}
+.sobre-waterfy p{font-size:1.3em;background:#337495;color: #fff;}
+.sobre-waterfy .sobre {float:right;}
+.sobre-waterfy .sobre .experimentar {float: left;}
+.experimentar.sobre-waterfy {background: #1F84B7;transition: .5s;}
+.experimentar.sobre-waterfy:hover {background: #125070;}
+/* SOBRE SPORTFY */
+.sobre-sportfy{background: #E0E05F;}
+.sobre-sportfy p{font-size:1.3em;background:#475907;color: #fff;}
+.sobre-sportfy .sobre {float:left;}
+.sobre-sportfy .sobre .experimentar {float: right;}
+.experimentar.sobre-sportfy {background: #7A9F00;transition: .5s;}
+.experimentar.sobre-sportfy:hover {background: #516900;}
+/* SOBRE DIETFY */
+.sobre-dietfy{background: #ED7229;}
+.sobre-dietfy p{font-size:1.3em;background:#BC2D2F;color: #fff;}
+.sobre-dietfy .sobre {float:right;}
+.sobre-dietfy .sobre .experimentar {float: left;}
 
 /* MENU DA HOME*/
 nav.nav-home {width: 50%;}
