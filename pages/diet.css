@@ -1,42 +1,264 @@
-body{margin:0}.logo{width:200px;padding:2%;display:block;margin:auto}.btn-categorias a{cursor:pointer;border:solid 1px transparent;padding:1%;margin:2px;border-radius:8px;font-family:Roboto,sans-serif;display:inline-block}.btn-categorias a:hover{border:solid 1px #000}.btn-categorias{text-align:center;padding:2%}@media (max-width:45em){div.btn-categorias a{width:40%;padding:2%}}
-.bloco-alimento{text-align:center;transition:.5s;display: inline-block;background: #ED7229;padding: 1%;border-radius: 8px;text-align: center;cursor: pointer;margin: 5px;font-family: "Roboto",sans-serif;}
-.bloco-alimento{text-align:center;transition:.5s;display: inline-block;background: #ED7229;padding: 1%;border-radius: 8px;text-align: center;cursor: pointer;margin: 5px;font-family: "Roboto",sans-serif;}
-.bloco-alimento div{border:2px dashed #fff;padding: 2%;border-radius: 8px;}
-.bloco-alimento:hover{opacity: 0.6;}
-#res{text-align: center;}
-.bloco-alimento::first-line{font-weight: 600;}
-nav.nav-home{width:50%}div#menu-home{margin:auto}#menu-home ul li.IMC{background:#e75757}#menu ul li.IMC:hover{background:#ff9083}#menu-home ul li.Water{background:#38a3d8}#menu ul li.Water:hover{background:#99cde3}#menu-home ul li.Stair{background:#e6aa33}#menu ul li.Stair:hover{background:#fcd476}#menu-home ul li.Diet{background:#ed7229}#menu ul li.Diet:hover{background:#fcb676}#menu-home ul li{display:inline;width:50%;text-align:center;font-size:4em}header h1{font-family:Roboto Condensed,sans-serif;text-align:center}#menu{text-align:center}#menu ul li{display:inline}div#menu ul{margin:0;padding:0;width:100%}div#menu ul li{width:20%;text-align:center;display:inline-block;margin:auto}#menu ul li a{font-family:Roboto,sans-serif;font-size:1em;text-decoration:none;color:#fff;display:block;text-align:center;padding:1em}#menu ul li.IMC{background:#e75757}#menu ul li.IMC:hover{background:#ff9083}#menu ul li.Water{background:#38a3d8}#menu ul li.Water:hover{background:#99cde3}#menu ul li.Stair{background:#e6aa33}#menu ul li.Stair:hover{background:#fcd476}#menu ul li.Diet{background:#ed7229}#menu ul li.Diet:hover{background:#fcb676}.bloco-alimento{transition-duration:1s;display:inline-block;opacity:1;}.kcal-marcador{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:Roboto,sans-serif;font-size:2em;background:rgba(255,255,255,.4);border-radius:100%;border:dashed 5px;padding:2%}
-#mostra-kcal{
-    margin-bottom: 12%;
+body {
+    margin: 0
 }
-/*carrinho de alimentos botão*/
-.carrinho-de-alimentos{
-    border-radius: 5%;
-    width: 8%;
+
+.logo {
+    width: 200px;
     padding: 2%;
-    background-color: chartreuse;
-    color: red;
+    display: block;
+    margin: auto
+}
+/* BOTOES DE CATEGORIAS */
+.btn-categorias a {
+    cursor: pointer;
+    border: solid 1px transparent;
+    padding: 1%;
+    margin: 2px;
+    border-radius: 8px;
+    font-family: Roboto, sans-serif;
+    display: inline-block
+}
+.btn-botao{transition: .8s;}
+.btn-botao:hover{ box-shadow: 3px 3px 3px rgba(0,0,0,0.5)}
+.btn-botao.cereais {border:solid 3px #BC7500;color: #BC7500; }
+.btn-botao.cereais:hover {background: #BC7500;color: #fff;}
+.btn-botao.verduras {border:solid 3px #41773D;color: #41773D; }
+.btn-botao.verduras:hover {background: #41773D;color: #fff;}
+.btn-botao.frutas {border:solid 3px #563F99;color: #563F99; }
+.btn-botao.frutas:hover {background: #563F99;color: #fff;}
+.btn-botao.oleos {border:solid 3px #8D3714;color: #8D3714; }
+.btn-botao.oleos:hover {background: #8D3714;color: #fff;}
+.btn-botao.pescados {border:solid 3px #1C5272;color: #1C5272; }
+.btn-botao.pescados:hover {background: #1C5272;color: #fff;}
+.btn-botao.carnes {border:solid 3px #912126;color: #912126; }
+.btn-botao.carnes:hover {background: #912126;color: #fff;}
+.btn-botao.leite {border:solid 3px #CE7A0E;color: #CE7A0E; }
+.btn-botao.leite:hover {background: #CE7A0E;color: #fff;}
+.btn-botao.bebidas {border:solid 3px #7C042C;color: #7C042C; }
+.btn-botao.bebidas:hover {background: #7C042C;color: #fff;}
+.btn-botao.ovos {border:solid 3px #575757;color: #575757; }
+.btn-botao.ovos:hover {background: #575757;color: #fff;}
+.btn-botao.acucarados {border:solid 3px #A00039;color: #A00039; }
+.btn-botao.acucarados:hover {background: #A00039;color: #fff;}
+.btn-botao.variados {border:solid 3px #286B60;color: #286B60; }
+.btn-botao.variados:hover {background: #286B60;color: #fff;}
+.btn-botao.industrializados {border:solid 3px #39547B;color: #39547B; }
+.btn-botao.industrializados:hover {background: #39547B;color: #fff;}
+.btn-botao.preparados {border:solid 3px #624B89;color: #624B89; }
+.btn-botao.preparados:hover {background: #624B89;color: #fff;}
+.btn-botao.leguminosas {border:solid 3px #9C2892;color: #9C2892; }
+.btn-botao.leguminosas:hover {background: #9C2892;color: #fff;}
+.btn-botao.sementes {border:solid 3px #34615F;color: #34615F; }
+.btn-botao.sementes:hover {background: #34615F;color: #fff;}
+
+
+.btn-categorias {
+    text-align: center;
+    padding: 2%
+}
+
+@media (max-width:45em) {
+    div.btn-categorias a {
+        width: 40%;
+        padding: 2%
+    }
+}
+
+
+
+/* FIM BOTOES DE CATEGORIAS */
+
+/* CARRINHO*/
+#carrinho{user-select: none;font-family: "Roboto",sans-serif;border-bottom:2px solid #424242;}
+.carrinho-de-alimentos{font-family:"Roboto",sans-serif: inline-block;padding: 2%;}
+.dieta-geral{display: inline-block;padding: 2%;border-right: 2px solid #424242;}
+.gerar-dieta{display: inline-block;padding: 2%;}
+.coluna-carrinho{display: inline-block;width: 49%;}
+.coluna-carrinho-2{display: inline-block;width: 50%;text-align: end;}
+
+.corpo-pre-alimento-selecionado{background:#fff;;}
+
+/* FIM CARRINHO */
+
+.bloco-alimento {
+    text-align: center;
+    transition: .5s;
+    display: inline-block;
+    background: #ED7229;
+    padding: 1%;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px;
+    font-family: "Roboto", sans-serif;
+}
+
+.bloco-alimento div {
+    border: 2px dashed #fff;
+    padding: 2%;
+    border-radius: 8px;
+}
+.bloco-alimento:hover div{
+    color: #fff;
+}
+
+.bloco-alimento:hover {
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    background: #AD3300;
+    color: #fff;
+}
+
+#res {
+    text-align: center;
+}
+
+.bloco-alimento::first-line {
+    font-weight: 600;
+}
+
+nav.nav-home {
+    width: 50%
+}
+
+div#menu-home {
+    margin: auto
+}
+
+#menu-home ul li.IMC {
+    background: #e75757
+}
+
+#menu ul li.IMC:hover {
+    background: #ff9083
+}
+
+#menu-home ul li.Water {
+    background: #38a3d8
+}
+
+#menu ul li.Water:hover {
+    background: #99cde3
+}
+
+#menu-home ul li.Stair {
+    background: #e6aa33
+}
+
+#menu ul li.Stair:hover {
+    background: #fcd476
+}
+
+#menu-home ul li.Diet {
+    background: #ed7229
+}
+
+#menu ul li.Diet:hover {
+    background: #fcb676
+}
+
+#menu-home ul li {
+    display: inline;
+    width: 50%;
+    text-align: center;
+    font-size: 4em
+}
+
+header h1 {
+    font-family: Roboto Condensed, sans-serif;
+    text-align: center
+}
+
+#menu {
+    text-align: center
+}
+
+#menu ul li {
+    display: inline
+}
+
+div#menu ul {
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+
+div#menu ul li {
+    width: 20%;
+    text-align: center;
+    display: inline-block;
+    margin: auto
+}
+
+#menu ul li a {
+    font-family: Roboto, sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    text-align: center;
+    padding: 1em
+}
+
+#menu ul li.IMC {
+    background: #e75757
+}
+
+#menu ul li.IMC:hover {
+    background: #ff9083
+}
+
+#menu ul li.Water {
+    background: #38a3d8
+}
+
+#menu ul li.Water:hover {
+    background: #99cde3
+}
+
+#menu ul li.Stair {
+    background: #e6aa33
+}
+
+#menu ul li.Stair:hover {
+    background: #fcd476
+}
+
+#menu ul li.Diet {
+    background: #ed7229
+}
+
+#menu ul li.Diet:hover {
+    background: #fcb676
+}
+
+.bloco-alimento {
     transition-duration: 1s;
-    
+    display: inline-block;
+    opacity: 1;
 }
-.carrinho-de-alimentos i{
-    transition-duration: .6s;
-    opacity: 0.6;
-}
-#carrinho{
-    margin-left: 0%;
-}
-#cart{
+
+.kcal-marcador {
+    font-family: Roboto, sans-serif;
     font-size: 2em;
+    background: rgba(255, 255, 255, .4);
 }
+
+#mostra-kcal {
+    margin: 5%;
+    text-align: center;
+}
+
 /*alimentos pré selecionados*/
 #pre-selecionados{
     display: block;
     margin: 0 auto;
-    width: 100%;
+    max-width: 100%;
     border: 1px dashed black;
     padding: 5%;
+    background: linear-gradient(90deg, rgba(255,83,17,1) 36%, rgba(255,116,43,1) 100%);
 }
+.img-categoria{height: 150px;border-radius: 8px 8px 0px 0px;}
+.tag-alimento span.indicador{background: #fff;padding: 5%;border-radius: 100%;}
 #pre-selecionados > div{
     display: inline-table;
     border-radius: 8px;
@@ -70,16 +292,16 @@ nav.nav-home{width:50%}div#menu-home{margin:auto}#menu-home ul li.IMC{background
     color:#000;
     vertical-align: bottom;
     margin-bottom: 20px;
-    padding: 2%;
-    text-align:center;
-}
+    padding: 2%;}
+
+.tag-alimento i{background: #fff;border-radius:100%;padding:4px;}
+
 .circle-text{
-    color: #fff;
+    color: #000;
     font-family: Roboto,sans-serif;
     font-size:1em;
     padding: 1%;
-    height: ;
-}
+    margin-top: 20px;
 }
 
 /*formatação do form quantidade de refeições*/
