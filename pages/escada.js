@@ -24,43 +24,41 @@ function funcaoReiderizarNovoFrame(){
         
         switch(valor){
             case 0:
-                content = `<i opacity: 0.5;" class="fas fa-arrow-circle-right"></i>`;
+                content = `<i style="margin-left: 20%; opacity: 0.5;" class="fas fa-arrow-circle-right"></i>`;
                 objeto.innerHTML = content;console.log(objeto);
                 break;
             case 1:
-                content = `<i class="fas fa-arrow-circle-right verde"></i>`;
+                content = `<i style="margin-left: 20%;" class="fas fa-arrow-circle-right verde"></i>`;
                 objeto.innerHTML = content;
                 console.log(objeto);
                 break;
             case 2:
-                content = `<i opacity: 0.5;" class="fas fa-arrow-circle-left"></i>`;
-                objeto.innerHTML = content;console.log(objeto);
-                break;
-            case 3:
                 //objeto[i].style.opacity = '.5';
                 break;
-            case 4:
-                content = `<img style="max-width:90px" src="../images/Escada/Sprite0.png" width="100%;">`;
+            case 3:
+                content = `<img style="margin-left: -20%;" src="../images/Escada/Sprite0.png" width="80%;">`;
                 objeto.innerHTML = content;
                 console.log(objeto);
                 break;
-            case 5:
+            case 4:
                 console.log(objeto);
                 //objeto[i].style.color = 'orange';
                 //objeto[i].style.opacity = '1';
                 break;
-            case 6:
-                content = `<img style="opacity: 1;max-width:90px; width: 100%;" src="../images/Escada/checkpoint.png">`;
-                objeto.innerHTML = content;
+            case 5:
+                content = `<img style="opacity: 1; width: 80%;" src="../images/Escada/Sprite0_1.png">`;
+                break;
+                
             
         }
+        objeto.innerHTML = content;
     }
 }
 function funcaoBaixo(){
-    db.results[2].fases[Number(index_global)+5].value = 3;
+    db.results[3].fases[Number(index_global)+5].value = 3;
 }
 function funcaoVerde(){
-    db.results[2].fases[index_global].value = 1;
+    db.results[3].fases[index_global].value = 1;
 }   
 /*funções de movimentação do personagem*/
 function funcaoMoveDecrescente(inicio){
@@ -72,7 +70,7 @@ function funcaoMoveDecrescente(inicio){
     }
     if(modo == 0 && Number(index_global)-1 >= inicio){
         funcaoVerde();
-        db.results[2].fases[Number(index_global) - 1].value = 3;
+        db.results[3].fases[Number(index_global) - 1].value = 3;
     }
     else{
         funcaoVerde();
@@ -99,7 +97,7 @@ function funcaoMoveCrescente(fim){
     }
     if(modo == 0 && Number(index_global)+1 <= fim){
         funcaoVerde();
-        db.results[2].fases[Number(index_global) + 1].value = 3;
+        db.results[3].fases[Number(index_global) + 1].value = 3;
     }
     else{
         funcaoVerde();
@@ -121,7 +119,7 @@ function funcaoMoveCrescente(fim){
 function funcaoSairDessaFase(){
     $('#crono1').css("display", "none");
     $('#crono').css("display", "none");
-    var comemoracao = ` </br><img id="comemora" src=../images/Escada/comemoracao.gif></br>`;
+    var comemoracao = ` </br><img id="comemora" src=../images/congratulations.gif></br>`;
     $('#res').css("display", "block");
     $('#res').html(comemoracao);
     if( index_global >= 0 && index_global <= 4){
@@ -166,7 +164,7 @@ function funcaoContagem(){
     aux = tempo % 60;
     let seg = Math.trunc(aux);
     if((tempo) >= 0 && status == 1){
-        let cronometro = `  <div class="crono-text">
+        let cronometro = `  <div>
                             <p>${parseInt(min)} : ${parseInt(seg)} / 5 : 0</p>
                             </div>
                             `;
@@ -200,7 +198,7 @@ function funcaoStart(){
         $('#play').css("color", "black");
         $('#play').css("display", "none");
         $('#pausa').css("display", "inline-block");
-        $('#retorna').css("");
+        $('#retorna').css("margin-left", "40%");
     }, 500);
     
     $('#retorna').css("color", "black");
@@ -241,8 +239,8 @@ function funcaoPausar(){
 function funcaoAtividade1(index, tempo_exe){
     aux1 = tempo_exe;
     index_global = index;
-    console.log(db.results[2].fases[`${index}`].value);
-    if(db.results[2].fases[`${index}`].value == 1 || db.results[2].fases[`${index}`].value == 3){
+    console.log(db.results[3].fases[`${index}`].value);
+    if(db.results[3].fases[`${index}`].value == 1 || db.results[3].fases[`${index}`].value == 3){
         funcaoSumirMapa();
         $('#bot').css("display", "none");
         tempo = tempo_exe;
@@ -256,20 +254,21 @@ function funcaoAtividade1(index, tempo_exe){
         for(var i = 0; i < tempo_exe; i++){
             document.getElementsByClassName('fracao')[i].classList.remove('complete');
         }
-        var itens = `
-        <div class="corpo-atividade">
-        <h1 class="titulo-atividade">Atividade 1 : Corrida de 5 minutos</h1>
-                    <img class="imagem-atividade" src=../images/Escada/corrida.gif>
+        var itens = `</br>
+        <h1 class=texto-acima>Atividade 1 : Corrida de 5 minutos</h1>
+                    </br>
+                    </br>
+                    <img style="margin-left: 38%;" src=../images/Escada/Sprite3.png>
                     </br>
                     
-                    <div id="botoes-atividade">
-                        <i id="retorna" class="fas fa-undo-alt" onclick=${"funcaoReiniciar("+`${tempo_exe}`+");"}></i>
+                    <div id=botoes>
+                        <i style="font-size: 5em; margin-left:35%; display: inline-block; color: black;" id=retorna class="fas fa-undo-alt" onclick=${"funcaoReiniciar("+`${tempo_exe}`+");"}></i>
 
-                        <i class="fas fa-play-circle" id="play" onclick=${"funcaoStart();"}></i>
+                        <i style="font-size: 5em; margin-left:0%; display: inline-block;
+                        color: black;" class="fas fa-play-circle" id=play onclick=${"funcaoStart();"}></i>
 
-                        <i id="pausa" class="fas fa-pause-circle" onclick=${"funcaoPausar();"}></i>
+                        <i style="font-size: 5em; margin-left:0%; display: inline-block; color: black;" id=pausa class="fas fa-pause-circle" onclick=${"funcaoPausar();"}></i>
                     </div>
-        </div>
                     `
         $("#res").html(itens);
     }

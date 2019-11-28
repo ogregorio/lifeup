@@ -6,84 +6,151 @@
   <meta name="theme-color" content="#ED7229">
   <title>Life Up</title>
   <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="./diet.css">
-  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
   <link href="../fontawesome/css/all.css" rel="stylesheet">
   <link rel="shortcut icon" href="../images/favicon.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body style="background: #fff" onload="init()">
     
-    <header>
-        <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a><nav><nav>
-      <div id="menu">
+<header>
+  <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a>
+  <nav>
+    <div id="menu">
       <ul>
         <li class="IMC"><a href="./Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
-        <li class="Water"  style="background: #99CDE3"><a style="color:#000" href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
-        <li class="Sport"><a href="./Escada.html"><i class="fas fa-hiking"></i><span> Sport.fy</span></a></li>
-        <li class="Diet"><a href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
+        <li class="Water"><a href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
+        <li class="Stair"><a href="./Escada.html"><i class="fas fa-hiking"></i><span> Stair.fy</span></a></li>
+        <li class="Diet" style="background: #FCB676"><a style="color:#000;" href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
       </ul>
-      </div>
-      </nav>
-      </header>
+    </div>
+  </nav>
+</header>
+<div id="resposta"></div>
+
+
+
+<div id="alertas"></div>
+<div id="formulario-quantidade-refs"></div>
+
 <div id="contador-calorias">
 
 </div>
 <div class="btn-categorias">
-<a style="background: #FFEC6D;" onclick=funcaoBuscarAlimentos(1)><i class="fas fa-bread-slice"></i> Cereais e derivados</a>
-<a style="background: #06CD3E;" onclick=funcaoBuscarAlimentos(2)><i class="fas fa-leaf"></i> Verduras, hortaliças e derivados</a>
-<a style="background: #6F4DE9;" onclick=funcaoBuscarAlimentos(3)><i class="fas fa-apple-alt"></i> Frutas e derivados</a>
-<a style="background: #E97A4D;" onclick=funcaoBuscarAlimentos(4)><i class="fas fa-bacon"></i> Gorduras e óleos</a>
-<a style="background: #E94D99;" onclick=funcaoBuscarAlimentos(5)><i class="fas fa-fish"></i> Pescados e frutos do mar</a>
-<a style="background: #CD0621;" onclick=funcaoBuscarAlimentos(6)><i class="fas fa-drumstick-bite"></i> Carnes e derivados</a>
-<a style="background: #ADE94D;" onclick=funcaoBuscarAlimentos(7)><i class="fas fa-cheese"></i> Leite e derivados</a>
-<a style="background: #4DD1E9;" onclick=funcaoBuscarAlimentos(8)><i class="fas fa-wine-glass-alt"></i> Bebidas</a>
-<a style="background: #E9D34D;" onclick=funcaoBuscarAlimentos(9)><i class="fas fa-egg"></i> Ovos e derivados</a>
-<a style="background: #CD4E06;" onclick=funcaoBuscarAlimentos(10)><i class="fas fa-candy-cane"></i> Produtos açucarados</a>
-<a style="background: #4DE9A2" onclick=funcaoBuscarAlimentos(11)><i class="fas fa-hotdog"></i> Variados</a>
-<a style="background: #538AD8;" onclick=funcaoBuscarAlimentos(12)><i class="fas fa-cookie"></i> Alimentos industrializados</a>
-<a style="background: #8553D8;" onclick=funcaoBuscarAlimentos(13)><i class="fas fa-hamburger"></i> Alimentos preparados</a>
-<a style="background: #D853CD;" onclick=funcaoBuscarAlimentos(14)><i class="fas fa-utensil-spoon"></i> Leguminosas e derivados</a>
-<a style="background: #00C4BC;" onclick=funcaoBuscarAlimentos(15)><i class="fas fa-seedling"></i> Nozes e sementes</a>
+<a style="background: #FFEC6D;" onclick="funcaoBuscarAlimentos(1, 'fas fa-bread-slice', '#FFEC6D')"><i class="fas fa-bread-slice"></i> Cereais e derivados</a>
+<a style="background: #06CD3E;" onclick="funcaoBuscarAlimentos(2, 'fas fa-leaf', '#06CD3E')"><i class="fas fa-leaf"></i> Verduras, hortaliças e derivados</a>
+<a style="background: #6F4DE9;" onclick="funcaoBuscarAlimentos(3, 'fas fa-apple-alt', '#6F4DE9')"><i class="fas fa-apple-alt"></i> Frutas e derivados</a>
+<a style="background: #E97A4D;" onclick="funcaoBuscarAlimentos(4, 'fas fa-bacon', '#E97A4D')"><i class="fas fa-bacon"></i> Gorduras e óleos</a>
+<a style="background: #E94D99;" onclick="funcaoBuscarAlimentos(5, 'fas fa-fish', '#E94D99')"><i class="fas fa-fish"></i> Pescados e frutos do mar</a>
+<a style="background: #CD0621;" onclick="funcaoBuscarAlimentos(6, 'fas fa-drumstick-bite', '#CD0621')"><i class="fas fa-drumstick-bite"></i> Carnes e derivados</a>
+<a style="background: #ADE94D;" onclick="funcaoBuscarAlimentos(7, 'fas fa-cheese', '#ADE94D')"><i class="fas fa-cheese"></i> Leite e derivados</a>
+<a style="background: #4DD1E9;" onclick="funcaoBuscarAlimentos(8, 'fas fa-wine-glass-alt', '#4DD1E9')"><i class="fas fa-wine-glass-alt"></i> Bebidas</a>
+<a style="background: #E9D34D;" onclick="funcaoBuscarAlimentos(9, 'fas fa-egg', '#E9D34D')"><i class="fas fa-egg"></i> Ovos e derivados</a>
+<a style="background: #CD4E06;" onclick="funcaoBuscarAlimentos(10, 'fas fa-candy-cane', '#CD4E06')"><i class="fas fa-candy-cane"></i> Produtos açucarados</a>
+<a style="background: #4DE9A2" onclick="funcaoBuscarAlimentos(11, 'fas fa-hotdog', '#4DE9A2')"><i class="fas fa-hotdog"></i> Variados</a>
+<a style="background: #538AD8;" onclick="funcaoBuscarAlimentos(12, 'fas fa-cookie', '#538AD8')"><i class="fas fa-cookie"></i> Alimentos industrializados</a>
+<a style="background: #8553D8;" onclick="funcaoBuscarAlimentos(13, 'fas fa-hamburger', '#8553D8')"><i class="fas fa-hamburger"></i> Alimentos preparados</a>
+<a style="background: #D853CD;" onclick="funcaoBuscarAlimentos(14, 'fas fa-utensil-spoon', '#D853CD')"><i class="fas fa-utensil-spoon"></i> Leguminosas e derivados</a>
+<a style="background: #00C4BC;" onclick="funcaoBuscarAlimentos(14, 'fas fa-seedling', '#00C4BC')"><i class="fas fa-seedling"></i> Nozes e sementes</a>
 </div>
-<div id="res"></div>
-<div id="resposta"></div>
+<div id="carrinho">
+  <div class="carrinho-de-alimentos"  onmouseover="funcaoPequenaAnimacao();" onmouseout="resetStatus();" onclick="funcaoMostrarAlimentosPreSelecionados();">
+    <i id="cart" class="fas fa-shopping-cart">
+    </i>
+  </div>
+</div>
 
-<div id="botao3" style="background-color: aqua;">
-  <p>verificar imc global</p>
+
+<div class="sobre-imcfy" style='background-color: #FCB676;'>
+  <div class="sobre">
+    <h1>Dieta</h1>
+      <div id='imagem-dieta'>
+        <img src='../images/Diet/piramide.png'>
+      </div>
+  </div>
+  <div style="display: inline-block;">
+    <button onclick="funcaoExibirAlimentos();" type="button" id="botao-dieta-geral" class="btn btn-success">Toda Dieta</button>
+  </div>
+  <div id="botao-dieta-por-categoria">
+    <p>Dieta categorizada</p>
+    <button onclick="funcaoHabilitarPiramide();" type="button" class="btn btn-success">Success</button>
+  </div>
+<div class="ilustracao">
+  <img src="../images/Home/sprite-IMC.png"/>
+</div>
+</div>
+
+
+<div id="pre-selecionados"></div>
+<div id="res"></div>
+<div id="dieta">
+
+
+</div>
+<div id="piramide-separada">
+  <div id="quarto">
+    <div id="quarto-0">
+      <img onclick="funcaoDietaCategoriaEspecifica(6)" src="../images/Diet/quarto-andar1-piramide.png" alt="a" id="quarto-andar1">
+    </div>
+    <div id="quarto-1">
+      <img onclick="funcaoDietaCategoriaEspecifica(7)" src="../images/Diet/quarto-andar-piramide.png" alt="a" id="quarto-andar">
+    </div>
+  </div>
+  <div id="terceiro">
+    <div id="terceiro-0">
+      <img onclick="funcaoDietaCategoriaEspecifica(3)" src="../images/Diet/terceiro-andar2-piramide.png" alt="a" id="terceiro-andar2">
+    </div>
+    <div id="terceiro-1">
+      <img onclick="funcaoDietaCategoriaEspecifica(4)" src="../images/Diet/terceiro-andar1-piramide.png" alt="a" id="terceiro-andar1">
+    </div>
+    <div id="terceiro-2">
+      <img onclick="funcaoDietaCategoriaEspecifica(5)" src="../images/Diet/terceiro-andar-piramide.png" alt="a" id="terceiro-andar">
+    </div>
+  </div>
+  <div id="segundo">
+    <div id="segundo-0">
+      <img onclick="funcaoDietaCategoriaEspecifica(2)" src="../images/Diet/segundo-andar-piramide.png" alt="a" id="segundo-andar">
+    </div>
+    <div id="segundo-1">
+      <img onclick="funcaoDietaCategoriaEspecifica(1)" src="../images/Diet/segundo-andar1-piramide.png" alt="a" id="segundo-andar1">
+    </div>
+    
+  </div> 
+  <div id="base" >
+  <img onclick="funcaoDietaCategoriaEspecifica(0)" src="../images/Diet/base-piramide.png" alt="a">
+  </div>
 </div>
 <div id="botao2" style="background-color: red;">
-  <p>criar botoes</p>
+  <p>Gerar Dieta</p>
 </div>
 
-<div id="botao1" style="background-color: yellow;">
-  <p>mostrar arranjo</p>
-</div>
 
-<div id="botao4" style="background-color: green;">
-  <p>apagar itens do arranjo</p>
-</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="./imc.js"></script>
+<script src="../db.js"></script>
+<script src="../objects.js"></script>
+<script src="./imcfy.js"></script>
 <script src="./diet.js"></script>
 <script>
     function init(){
+      var db = JSON.parse(localStorage.getItem('db_results_real2'));
+      criarFormQuantRef()
+      var botoes = " ";
+      var diet = document.getElementById('dieta');
+      diet.innerHTML = botoes;
       var kcal = dietaBalanceada.gerarKcal();
-      dietaBalanceada.criarBlocoKcal(kcal);
+      dietaBalanceada.criarBlocoKcal(db.results[0].calorias);
+      
       $('#botao3').click(function(){
         imcGlobal();
       });
       $('#botao2').click(function(){
-        criarBotoes();
-      });
-      $('#botao1').click(function(){
-        mostrarArranjo();
-      });
-      $('#botao4').click(function(){
-        funcaoLimparArranjo();
-      });
-      $('#botao5').click(function(){
-        funcaoGerarDieta();
+        db.results[0].caloriaGeral = 0;
+        for(var k = 0; k < 15; k++){
+          funcaoClassificaCategoria(k);
+        }
+        funcaoDividirPelaQuantidadeDeRefeicoes();
       });
     }
 </script>

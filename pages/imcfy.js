@@ -1,6 +1,8 @@
 
 var db = JSON.parse(localStorage.getItem('db_results_real2'));
-
+//atualizar o estadocalorico para calcular novamente as calorias
+db.results[0].estadoCalorico = 0;
+localStorage.setItem('db_results_real2', JSON.stringify(db));
 //constantes que estavam no outro doc imcfy
 
 const esconder = 'esconder';

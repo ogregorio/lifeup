@@ -1,90 +1,149 @@
-.btn-categorias a {
-    cursor: pointer;
-    border: solid 1px transparent;
-    padding: 1%;
-    margin: 2px;
-    border-radius: 8px;
-    font-family: Roboto, sans-serif;
-    display: inline-block
+body{margin:0}.logo{width:200px;padding:2%;display:block;margin:auto}.btn-categorias a{cursor:pointer;border:solid 1px transparent;padding:1%;margin:2px;border-radius:8px;font-family:Roboto,sans-serif;display:inline-block}.btn-categorias a:hover{border:solid 1px #000}.btn-categorias{text-align:center;padding:2%}@media (max-width:45em){div.btn-categorias a{width:40%;padding:2%}}
+.bloco-alimento{text-align:center;transition:.5s;display: inline-block;background: #ED7229;padding: 1%;border-radius: 8px;text-align: center;cursor: pointer;margin: 5px;font-family: "Roboto",sans-serif;}
+.bloco-alimento{max-height: 150px;min-width: 200px;text-align:center;transition:.5s;display: inline-block;background: #ED7229;padding: 1%;border-radius: 8px;text-align: center;cursor: pointer;margin: 5px;font-family: "Roboto",sans-serif;}
+.bloco-alimento div{border:2px dashed #fff;padding: 2%;border-radius: 8px;}
+.bloco-alimento:hover{opacity: 0.6;}
+#res{text-align: center;}
+.bloco-alimento::first-line{font-weight: 600;}
+nav.nav-home{width:50%}div#menu-home{margin:auto}#menu-home ul li.IMC{background:#e75757}#menu ul li.IMC:hover{background:#ff9083}#menu-home ul li.Water{background:#38a3d8}#menu ul li.Water:hover{background:#99cde3}#menu-home ul li.Stair{background:#e6aa33}#menu ul li.Stair:hover{background:#fcd476}#menu-home ul li.Diet{background:#ed7229}#menu ul li.Diet:hover{background:#fcb676}#menu-home ul li{display:inline;width:50%;text-align:center;font-size:4em}header h1{font-family:Roboto Condensed,sans-serif;text-align:center}#menu{text-align:center}#menu ul li{display:inline}div#menu ul{margin:0;padding:0;width:100%}div#menu ul li{width:20%;text-align:center;display:inline-block;margin:auto}#menu ul li a{font-family:Roboto,sans-serif;font-size:1em;text-decoration:none;color:#fff;display:block;text-align:center;padding:1em}#menu ul li.IMC{background:#e75757}#menu ul li.IMC:hover{background:#ff9083}#menu ul li.Water{background:#38a3d8}#menu ul li.Water:hover{background:#99cde3}#menu ul li.Stair{background:#e6aa33}#menu ul li.Stair:hover{background:#fcd476}#menu ul li.Diet{background:#ed7229}#menu ul li.Diet:hover{background:#fcb676}.bloco-alimento{transition-duration:1s;display:inline-block;opacity:1;}.kcal-marcador{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:Roboto,sans-serif;font-size:2em;background:rgba(255,255,255,.4);border-radius:100%;border:dashed 5px;padding:2%}
+#mostra-kcal{
+    margin-bottom: 12%;
 }
-
-.btn-categorias a:hover {
-    border: solid 1px #000
-}
-
-.btn-categorias {
-    text-align: center;
-    padding: 2%
-}
-
-@media (max-width:45em) {
-    div.btn-categorias a {
-        width: 40%;
-        padding: 2%
-    }
-}
-
-.bloco-alimento {
-    text-align: center;
-    transition: .5s;
-    display: inline-block;
-    background: #ED7229;
-    padding: 1%;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    margin: 5px;
-    font-family: "Roboto", sans-serif;
-}
-
-.bloco-alimento {
-    max-height: 150px;
-    min-width: 200px;
-    text-align: center;
-    transition: .5s;
-    display: inline-block;
-    background: #ED7229;
-    padding: 1%;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    margin: 5px;
-    font-family: "Roboto", sans-serif;
-}
-
-.bloco-alimento div {
-    border: 2px dashed #fff;
+/*carrinho de alimentos botão*/
+.carrinho-de-alimentos{
+    border-radius: 5%;
+    width: 8%;
     padding: 2%;
-    border-radius: 8px;
+    background-color: chartreuse;
+    color: red;
+    transition-duration: 1s;
+    
 }
-
-.bloco-alimento:hover {
+.carrinho-de-alimentos i{
+    transition-duration: .6s;
     opacity: 0.6;
 }
-
-#res {
-    text-align: center;
+#carrinho{
+    margin-left: 0%;
 }
-
-.bloco-alimento::first-line {
-    font-weight: 600;
-}
-
-.bloco-alimento {
-    transition-duration: 1s;
-    display: inline-block;
-    opacity: 1;
-}
-
-.kcal-marcador {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: Roboto, sans-serif;
+#cart{
     font-size: 2em;
-    background: rgba(255, 255, 255, .4);
-    border-radius: 100%;
-    border: dashed 5px;
-    padding: 20%
 }
+/*alimentos pré selecionados*/
+#pre-selecionados{
+    display: block;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    border: 1px dashed black;
+}
+#pre-selecionados > div{
+    display: inline-block;
+    width: 250px;
+    height: 520px;
+    border: 10px solid rgb(0, 0, 0);
+    border-radius: 12%;
+}
+#pre-selecionados > div > div > i{
+    font-size: 7em;
+    margin-top: 15%;
+}
+.circle{
+    border-radius: 12%;
+    padding: 6%;
+    width: 80%;
+    margin: 0 auto;
+    justify-items: center;
+    text-align: center;
+    border: 5px dashed white;
+}
+.circle-text{
+    color: white;
+    font-family: Roboto,sans-serif;
+    font-size:2em;
+}
+
+/*formatação do form quantidade de refeições*/
+#form-quant-refeicoes{
+    display: inline-block;
+    width: 200px;
+    height: 400px;
+    border: 10px solid rgb(0, 0, 0);
+    border-radius: 12%;
+    text-align: center;
+    
+}
+#formulario-quantidade-refs{
+    margin-left: 40%;
+    margin-bottom: 2%;
+}
+
+#alertas{
+    margin-top: 2%;
+    width: 100%;
+}
+
+/*resposta da dieta*/
+.resposta-dieta{
+    
+}
+#imagem-dieta{
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+    border: 5px dashed black;
+    margin-left: 10%;
+    background-color: #ffffff31;
+    padding: 4%;
+    
+}
+#imagem-dieta > img{
+    width: 100%;
+    transition-duration: 1s;
+}
+
+
+/*pirâmide clicável*/
+#piramide-separada{
+    display: none;
+}
+#botao-dieta-por-categoria{
+    display: none;
+}
+#contador-calorias{
+    display: none;
+}
+
+#segundo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 0px;
+    grid-template-rows: 1fr;
+    margin-bottom: -545px;
+}
+#segundo > div{
+    margin-right: -900px;
+}
+
+#terceiro{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 0px;
+    grid-template-rows: 1fr;
+    margin-bottom: -545px;
+}
+#terceiro > div{
+    margin-right: -900px;
+}
+#quarto{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 0px;
+    grid-template-rows: 1fr;
+    margin-bottom: -545px;
+}
+#quarto > div{
+    margin-right: -900px;
+}
+
+

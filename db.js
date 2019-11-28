@@ -8,14 +8,8 @@ function funcaoDb(){
                         "calorias": 0,
                         "quantRefeicoes": 0,
                         "dieta": [
-                            {"carboidratosArray" : []},
-                            {"frutasArray" : []},
-                            {"hortalicasArray" : []},
-                            {"laticiniosArray" : []},
-                            {"carnesArray" : []},
-                            {"leguminosasArray" : []},
-                            {"acucarArray" : []},
-                            {"gordurasArray" : []},
+                            {"alimentosDieta": []},
+                            {"arrayAlimentosAuxiliar": []}
                         ],
                         "caloriaGeral": 0,
                         "blocosArrayCarb": [],
@@ -32,8 +26,8 @@ function funcaoDb(){
                     },
                     {
                         "alimentos":[
-                            ["batata","cebola","bacalhau"],
-                            ["chuchu","molho","stemp"],
+                            [],
+                            [],
                             [],
                             [],
                             [],
@@ -51,8 +45,8 @@ function funcaoDb(){
                     },
                     {
                         "atributos":[
-                            ["122*20*40*55*80*fas fa-apple-alt*#FFEC6D","122*20* 40*55*75*fas fa-apple-alt*#FFEC6D", "122*20*40*55*40*fas fa-apple-alt*#FFEC6D"],
-                            ["122*20*40*55*71*fas fa-leaf*#06CD3E", "122*20* 40*55*85*fas fa-leaf*#06CD3E", "122*20*40*55*95*fas fa-leaf*#06CD3E"],
+                            [],
+                            [],
                             [],
                             [],
                             [],
