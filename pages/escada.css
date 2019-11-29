@@ -5,6 +5,9 @@
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     margin: 0 auto;
     max-width: 1200px;
+    background-image: url('../images/Escada/neve.gif');
+    margin-top: -80px;
+    border-radius: 8%;
 }
 
 .indice{
@@ -105,4 +108,17 @@
 }
 .checkedlose{
     background-color: red;
+}
+
+.indice img {
+    width: 90%;
+}
+.personagem{
+    width: 200%;
+}
+#topo{
+    width: 100%;
+}
+#topo > img{
+    width: 100%;
 }
