@@ -75,7 +75,7 @@ function funcaoGame(){
 	//imagem
 	var img = new Image();
 	img.addEventListener('load',loadHandler,false);
-	img.src = "../images/Escada/img.png";
+	img.src = "../img.png";
 	assetsToLoad.push(img);
 	//contador de recursos
 	var loadedAssets = 0;
