@@ -39,6 +39,16 @@ Alien.prototype = Object.create(Sprite.prototype);
 
 Alien.prototype.explode = function(){
 	this.sourceX = 110;
-	this.width = 70;
+	this.width = 60;
 	this.height = 55;
+}
+
+var ObjectMessage = function(y, text, color){
+	this.x = 0;
+	this.y = y;
+	this.text = text;
+	this.visible = true;
+	this.font = "normal bold 20px emulogic";
+	this.color = color;
+	this.baseline = "top";
 }
