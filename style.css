@@ -2,6 +2,10 @@
     font-family: relogio;
     src: url('./DS-DIGIB.TTF')
 }
+@font-face{
+    font-family: emulogic;
+    src: url('./fonts/Emulogic-zrEw.ttf');
+}
 /* HOME */
 body{margin: 0;}
 .logo{width: 200px;padding: 2%;display: block;margin: auto;}
