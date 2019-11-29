@@ -1,10 +1,9 @@
 //jogo
 function funcaoGame(){
+	$('#topo').css('display', 'none');
 	var tela = document.getElementById('jogo');
 	var row1 = document.getElementById('pontuacao');
-	var row2 = document.getElementById('gameover');
 	row1.style.display = "grid";
-	row2.style.display = "grid";
 	var content = "";
 	for(var i = 0; i < 50; i++){
 		content += `	<div class="indice1">
@@ -13,7 +12,6 @@ function funcaoGame(){
 	}
 
 	row1.innerHTML = content;
-	row2.innerHTML = content;
 	tela.style.display = 'block';
 
 
@@ -28,13 +26,7 @@ function funcaoGame(){
 	//arrays
 	var sprites = [];
 	var assetsToLoad = [];
-	var tiposDeAlimentosSaudaveisSourceX = [50, 100];
-	var tiposDeAlimentosGordurososSourceX = [150, 200];
-	var tiposDeAlimentosAcucaradosSourceX = [250, 300];
-	var tiposDeObstaculosX = [100, 60, 80];
-	var tiposDeObstaculosY = [100, 70, 60];
-	var coresObstaculosX = [0, 200, 400];
-	var obstaculosInit = [450, 420, 400];
+	var messages = [];
 	//array de misseis
 	var misseis = [];
 	//aliens
@@ -43,7 +35,8 @@ function funcaoGame(){
 	var alienFrequency = 100;
 	var alienTimer = 0;
 	var contadorDeNavesAbatidasValidas = 0;
-	var contadorDeNavesAbatidasInvalidas = 0;
+	var contadorDeAlimentosQueChegaramNaBoca = 0;
+	var arrayDeSourceXAlimentos = [234, 284,334,384];
 	var win = lose = false;
 	var move = 0;
 	//sprites
@@ -53,23 +46,43 @@ function funcaoGame(){
     //personagem
     var char = new Sprite(0,104,56,58,222,438);
 	sprites.push(char);
+
+	//mensagem da tela inicial
+	var startMessage = new ObjectMessage(cnv.height/2, "PRESS ENTER", "#00a000");
+	messages.push(startMessage);
+	//mensagem de pausa
+	var pausa = new ObjectMessage(cnv.height/2, "PAUSE","#00a000");
+	pausa.visible = false;
+	messages.push(pausa);
+	//mensagem de game win
+	var gameWin = new ObjectMessage(cnv.height/2, "YOU WIN","#00a000");
+	gameWin.visible = false;
+	messages.push(gameWin);
+	//reinicia
+	var reinicia = false;
+	var reiniciarMessage = new ObjectMessage(cnv.height/2, "PRESS R PARA REINICIAR","#00a000");
+	reiniciarMessage.visible = false;
+	messages.push(reiniciarMessage);
+
+	var gameLose = new ObjectMessage(cnv.height/2, "YOU LOSE","#ff0000");
+	gameLose.visible = false;
+	messages.push(gameLose);
 	
 	//obstaculos
 	//var obstaculos = new Sprite(0, 0, 100, 200, 380, 298);
 	//sprites.push(obstaculos);
 	
 	//imagem
-
 	var img = new Image();
 	img.addEventListener('load',loadHandler,false);
-	img.src = '../img/img.png';
+	img.src = "../img/img.png";
 	assetsToLoad.push(img);
 	//contador de recursos
 	var loadedAssets = 0;
 	
 	
 	//entradas
-	var LEFT = 37, RIGHT = 39, ENTER = 13, SPACE = 32, CIMA = 38;
+	var LEFT = 37, RIGHT = 39, ENTER = 13, SPACE = 32, CIMA = 38, R = 82;
 	
 	//ações
 	var mvLeft = mvRight = jump = shoot = spaceIsDown = jumPress = false;
@@ -111,14 +124,35 @@ function funcaoGame(){
 				break;
 			case ENTER:
 				if(gameState !== PLAYING){
-					gameState = PLAYING;
+					if(reinicia){
+						lose = false;
+						win = false;
+						reiniciarMessage.visible = true;
+						gameLose.visible = false;
+						gameWin.visible = false;
+						reinicia = false;
+					}
+					else{
+						gameState = PLAYING;
+						startMessage.visible = false;
+						pausa.visible = false;
+						
+					}
+					
+					
 				} else {
+					pausa.visible = true;
 					gameState = PAUSED;
 				}
 				break;
 			case SPACE:
-				shoot = true;
-				spaceIsDown = false;
+				fireMissile();
+				spaceIsDown = true;
+				break;
+			case R:
+				gameState = PLAYING;
+				reiniciarMessage.visible = false;
+				alienFrequency = 75;
 				break;
 		}
 	},false);
@@ -151,16 +185,21 @@ function funcaoGame(){
 				update();
 				break;
 			case OVER:
+				reinicia = true;
 				if(win && !lose){
 					limparProgresso();
-					win = false;
+					gameWin.visible = true;
 					contadorDeNavesAbatidasValidas = 0;
+					contadorDeAlimentosQueChegaramNaBoca = 0;
 					console.log('Você venceu');
-					alienTimer = 0;
 				}
 				if(lose && !win){
+					limparProgresso();
+					gameLose.visible = true;
+					contadorDeAlimentosQueChegaramNaBoca = 0;
+					contadorDeNavesAbatidasValidas = 0;
+					
 					console.log('Você perdeu');
-					alienTimer = 0;
 				}
 				break;
 			case PAUSED:
@@ -188,13 +227,25 @@ function funcaoGame(){
 		}
 
 		//jump do personagem
-		if(shoot){
+		if(jump){
+			char.y = char.y - 12;
+			setTimeout(function(){
+				char.y = char.y + 12;
+				jump = false;
+			}, 400);
+		}
+		if(shoot && spaceIsDown){
 			fireMissile();
 			shoot = false;
-			spaceIsDown = true;
+			spaceIsDown = false;
 		}
 		
-		
+		//se o contador chegar a 25 o lose = true
+		if(contadorDeAlimentosQueChegaramNaBoca === 25){
+			lose = true;
+			win = false;
+			gameState = OVER;
+		}
 		
 		
 		//atualiza a posição
@@ -250,6 +301,7 @@ function funcaoGame(){
 					alieni.x += alieni.vx;
 				}
 				if(alieni.y > cnv.height + alieni.height){//quando eu passar da borda inferior do canvas remover item
+					contadorDeAlimentosQueChegaramNaBoca++;
 					removeObjects(alieni, aliens);
 					removeObjects(alieni, sprites);
 					i--;
@@ -266,6 +318,7 @@ function funcaoGame(){
 					
 					if(contadorDeNavesAbatidasValidas === 50){
 						win = true;
+						lose = false;
 						gameState = OVER;
 					}
 					else{
@@ -293,58 +346,20 @@ function funcaoGame(){
 	function makeAlien(){
 		//cria um valor randômico entre 0 e 8 ==> largura do canvas / a largura do alien
 		//divide o canvas em 9 colunar para o posicionamento aleatório do alien
-		if(Math.floor(Math.random() * 11) > 7){
-			var alimentoPosition = (Math.floor(Math.random() * 9)) * 55;
-			var alimentoSaudavel = new Alien(tiposDeAlimentosSaudaveisSourceX[getRandomInt(0,2)], 20, 50, 60,alimentoPosition, -60);
-			alimentoSaudavel.vy = 1;
-			//OTIMIZAÇÃO DO ALIEN
-			if(Math.floor(Math.random() * 11) > 7){//30% de chance
-				alimentoSaudavel.state = alimentoSaudavel.CRAZY;
-				alimentoSaudavel.vx = 2;
-			}
-
-			if(Math.floor(Math.random() * 11) > 5){//50% de chance
-				alimentoSaudavel.vy = 2;
-			}
-			sprites.push(alimentoSaudavel);
-			aliens.push(alimentoSaudavel);
+		var alienPosition = (Math.floor(Math.random() * 9)) * 55;
+		var alienigina = new Alien(arrayDeSourceXAlimentos[getRandomInt(0,4)], 103, 50, 60,alienPosition, -55);
+		alienigina.vy = 1;
+		//OTIMIZAÇÃO DO ALIEN
+		if(Math.floor(Math.random() * 11) > 7){//30% de chance
+			alienigina.state = alienigina.CRAZY;
+			alienigina.vx = 2;
 		}
-		else{
-			//alimento gorduroso
-			if(Math.floor(Math.random() * 11) > 7){
-				var alimentoPosition = (Math.floor(Math.random() * 9)) * 55;
-				var alimentoSaudavel = new Alien(tiposDeAlimentosSaudaveisSourceX[getRandomInt(0,2)], 20, 50, 60,alimentoPosition, -60);
-				alimentoSaudavel.vy = 1;
-				//OTIMIZAÇÃO DO ALIEN
-				if(Math.floor(Math.random() * 11) > 7){//30% de chance
-					alimentoSaudavel.state = alimentoSaudavel.CRAZY;
-					alimentoSaudavel.vx = 2;
-				}
 
-				if(Math.floor(Math.random() * 11) > 5){//50% de chance
-					alimentoSaudavel.vy = 2;
-				}
-				sprites.push(alimentoSaudavel);
-				aliens.push(alimentoSaudavel);
-			}
-			else{
-				//alimento açucarado
-				var alimentoPosition = (Math.floor(Math.random() * 9)) * 55;
-				var alimentoSaudavel = new Alien(tiposDeAlimentosSaudaveisSourceX[getRandomInt(0,2)], 20, 50, 60,alimentoPosition, -60);
-				alimentoSaudavel.vy = 1;
-				//OTIMIZAÇÃO DO ALIEN
-				if(Math.floor(Math.random() * 11) > 7){//30% de chance
-					alimentoSaudavel.state = alimentoSaudavel.CRAZY;
-					alimentoSaudavel.vx = 2;
-				}
-
-				if(Math.floor(Math.random() * 11) > 5){//50% de chance
-					alimentoSaudavel.vy = 2;
-				}
-				sprites.push(alimentoSaudavel);
-				aliens.push(alimentoSaudavel);
-				}
+		if(Math.floor(Math.random() * 11) > 5){//50% de chance
+			alienigina.vy = 2;
 		}
+		sprites.push(alienigina);
+		aliens.push(alienigina);
 	}
 
 	//destroi aliens
@@ -386,11 +401,24 @@ function funcaoGame(){
 	}
 	function render(){
 		ctx.clearRect(0,0,cnv.width,cnv.height);
+		//exibe os sprites
 		if(sprites.length !== 0){
 			for(var i in sprites){
 				var spr = sprites[i];
 				if(spr.status === "VISIBLE"){
 					ctx.drawImage(img,spr.sourceX,spr.sourceY,spr.width,spr.height,Math.floor(spr.x),Math.floor(spr.y),spr.width,spr.height);
+				}
+			}
+		}
+		//exibe os textos
+		if(messages.length !== 0){
+			for(var i in messages){
+				var message = messages[i];
+				if(message.visible){
+					ctx.font = message.font;
+					ctx.fillStyle = message.color;
+					ctx.textBaseline = message.baseline;
+					message.x = (cnv.width - ctx.measureText(message.text).width)/2;ctx.fillText(message.text, message.x, message.y); 
 				}
 			}
 		}
