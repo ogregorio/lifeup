@@ -8,7 +8,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link href="../fontawesome/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../style.css?v=1">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="./escada.css">
   <link rel="shortcut icon" href="../images/favicon.png" />
   <script src="../db.js"></script>
   <script src="./escada.js"></script>
@@ -16,54 +17,56 @@
   
 </head>
 <body style="background: #FCD476;"  onload="initial()">
-  <header>
-    <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a>
-    <nav>
-    <div id="menu">
-    <ul>
-      <li class="IMC" style="background: #FF9083"><a style="color:#000" href="./Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
-      <li class="Water"><a href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
-      <li class="Sport"><a href="./Escada.html"><i class="fas fa-hiking"></i><span> Sport.fy</span></a></li>
-      <li class="Diet"><a href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
-    </ul>
-    </div>
-    </nav>
-</header>
+    <header>
+        <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a><nav><nav>
+      <div id="menu">
+      <ul>
+        <li class="IMC"><a href="./Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
+        <li class="Water"  style="background: #99CDE3"><a style="color:#000" href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
+        <li class="Sport"><a href="./Escada.html"><i class="fas fa-hiking"></i><span> Sport.fy</span></a></li>
+        <li class="Diet"><a href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
+      </ul>
+      </div>
+      </nav>
+      </header>
+<section id="topo">
+  <img src="../images/Escada/topo.png" alt="a">
+</section>
 <section id="mapa-do-tesouro">
   <div class="indice"  onclick="funcaoAtividade1('0', 10);">
-    <img src="../images/Escada/Sprite1.png" width="80%;">
+    <img src="../images/Escada/Sprite1.png">
   </div>
   <div class="indice" onclick="funcaoAtividade1('1', 5);">
-    <i class="fas fa-arrow-circle-right "></i>
+    <i class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('2', 5);">
-    <i class="fas fa-arrow-circle-right"></i>
+    <i class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('3', 5);">
-    <i class="fas fa-arrow-circle-right"></i>
+    <i class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('4', 5);">
-    <i class="fas fa-arrow-circle-down"></i>
+    <i class="fas fa-check-circle"></i>
   </div>
 
   <div class="indice" onclick="funcaoAtividade1('5', 5);">
-    <i style="margin-left: 20%;" class="fas fa-arrow-circle-down"></i>
+    <i style="margin-left: 10px;" class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('6', 5);">
-    <i class="fas fa-arrow-circle-left"></i>
+    <i class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('7', 5);">
-    <i class="fas fa-arrow-circle-left"></i>
+    <i class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('8', 5);">
-    <i class="fas fa-arrow-circle-left"></i>
+    <i class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('9', 5);">
-    <img style="margin-left: -20%;" src="../images/Escada/Sprite2.png" width="80%;">
+    <img style="margin-left: -20%;" src="../images/Escada/checkpoint.png">
   </div>
 
   <div class="indice" onclick="funcaoAtividade1('10', 5);">
-    <i style="margin-left: 20%;" class="fas fa-arrow-circle-down"></i>
+    <i style="margin-left: 20px;" class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('11', 5);">
     <p>  </p>
@@ -80,19 +83,19 @@
 
   
   <div class="indice" onclick="funcaoAtividade1('15', 5);">
-    <img src="../images/Escada/Sprite3.png" width="80%;">
+    <img src="../images/Escada/checkpoint.png">
   </div>
   <div class="indice" onclick="funcaoAtividade1('16', 5);">
-    <i class="fas fa-arrow-circle-right"></i>
+    <i class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('17', 5);">
-    <i class="fas fa-arrow-circle-right"></i>
+    <i class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('18', 5);">
-    <i class="fas fa-arrow-circle-right"></i>
+    <i class="fas fa-check-circle"></i>
   </div>
   <div class="indice" onclick="funcaoAtividade1('19', 5);">
-    <i class="fas fa-arrow-circle-down"></i>
+    <i class="fas fa-check-circle"></i>
   </div>
 
 </section>
@@ -107,11 +110,6 @@
 <section id="gameover">
 
 </section>
-<script src="../collision.js"></script>
-<script src="../objects.js"></script>
-<script src="../js/script1.js"></script>
-<script src="../js/script.js"></script>
-
 <div id="jogo" style="display: none; width: 500px; height: 500px; position: relative; margin: 0 auto; border: solid; background-color: #fff; top: 50px;">
   <canvas id="canvas1" width="500" height="500"></canvas>
 </div>
@@ -120,7 +118,9 @@
   <canvas id="canvas2" width="500" height="500"></canvas>
 </div>
 
-
+<script src="../collision.js"></script>
+<script src="../objects.js"></script>
+<script src="../js/script.js"></script>
 
 
 </div>
@@ -136,8 +136,8 @@
 <button id="finalizar" value="1" class="btn btn-outline-success" style="width: 100%; display: none;">Finalizar</button>
 
 <footer>
-  <div id="copyrigth">
-<a>Copyrigth Gregor&Apolinar.io</a></div>
+    <div id="copyrigth">
+      <a>Copyrigth LIFE ❤ UP</a></div>
 </footer>
 
 <script>
