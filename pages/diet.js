@@ -588,10 +588,11 @@ function funcaoExibirAlimentos(){
             var status = arrayDeBlocos[5];
             var img = simbolo.replace(" ","%20");
             if(status == 0){
-                blocos += ` <div class="corpo-pre-alimento-selecionado">
+                blocos += ` 
+            <div class="corpo-pre-alimento-selecionado">
                 <div style="height: 200px;" class="info-alimento">
                   <div class="corpo-alimento">
-                    <div class="img-categoria" style="background:url(../images/Diet/alimentos/${img}.webp)">
+                    <div class="img-categoria" style="background:url(../images/Diet/alimentos/${img}.webp);background-position: center;">
                       <div class="tag-alimento"><span class="indicador"><i style="color:${cor}" class='${simbolo}'></i></span>
                       </div>
                     </div>
@@ -609,13 +610,13 @@ function funcaoExibirAlimentos(){
                     <i class="fas fa-utensils"></i>
                   </div>
                 </div>
-              </div>`;
+            </div>`;
             }
             else{
                 blocos += `  <div class="corpo-pre-alimento-selecionado">
                 <div style="height: 200px;" class="info-alimento">
                   <div class="corpo-alimento">
-                    <div class="img-categoria" style="background:url(../images/Diet/alimentos/${img}.webp)">
+                    <div class="img-categoria" style="background:url(../images/Diet/alimentos/${img}.webp);background-position: center;">
                       <div class="tag-alimento"><span class="indicador"><i style="color:${cor}" class='${simbolo}'></i></span>
                       </div>
                     </div>
@@ -705,7 +706,7 @@ function funcaoMostrarAlimentosPreSelecionados(){
             conteudo += `  <div class="corpo-pre-alimento-selecionado">
             <div style="height: 200px;" class="info-alimento">
               <div class="corpo-alimento">
-                <div class="img-categoria" style="background:url(../images/Diet/alimentos/${img}.webp)">
+                <div class="img-categoria" style="background:url(../images/Diet/alimentos/${img}.webp);background-position: center;">
                   <div class="tag-alimento"><span class="indicador"><i style="color:${corCategoria}" class='${simboloCategoria}'></i></span>
                   </div>
                 </div>
