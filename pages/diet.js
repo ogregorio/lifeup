@@ -557,6 +557,7 @@ function funcaoDividirPelaQuantidadeDeRefeicoes(){
                 var simbolo = arrayDeBlocos[3];
                 var cor = arrayDeBlocos[4];
                 var status = arrayDeBlocos[5];
+                var img = simbolo.replace(" ","%20");
 
                 db.results[0].dieta[1].arrayAlimentosAuxiliar.push(nome + "&" + kcal + "&" + gramagem + "&" + simbolo + "&" + cor + "&" + status);
             }//for do j
@@ -585,11 +586,12 @@ function funcaoExibirAlimentos(){
             var simbolo = arrayDeBlocos[3];
             var cor = arrayDeBlocos[4];
             var status = arrayDeBlocos[5];
+            var img = simbolo.replace(" ","%20");
             if(status == 0){
                 blocos += ` <div class="corpo-pre-alimento-selecionado">
                 <div style="height: 200px;" class="info-alimento">
                   <div class="corpo-alimento">
-                    <div class="img-categoria" style="background:url(../images/Diet/tipos-alimentos/${simbolo}.webp)">
+                    <div class="img-categoria" style="background:url(../images/Diet/tipos-alimentos/${img}.webp)">
                       <div class="tag-alimento"><span class="indicador"><i style="color:${cor}" class='${simbolo}'></i></span>
                       </div>
                     </div>
@@ -613,7 +615,7 @@ function funcaoExibirAlimentos(){
                 blocos += `  <div class="corpo-pre-alimento-selecionado">
                 <div style="height: 200px;" class="info-alimento">
                   <div class="corpo-alimento">
-                    <div class="img-categoria" style="background:url(../images/Diet/tipos-alimentos/${simbolo}.webp)">
+                    <div class="img-categoria" style="background:url(../images/Diet/tipos-alimentos/${img}.webp)">
                       <div class="tag-alimento"><span class="indicador"><i style="color:${cor}" class='${simbolo}'></i></span>
                       </div>
                     </div>
@@ -699,10 +701,11 @@ function funcaoMostrarAlimentosPreSelecionados(){
             var arrayDeCaracteristicas = caracteristicasEspecificas.split("*");
             var simboloCategoria = arrayDeCaracteristicas[5];
             var corCategoria = arrayDeCaracteristicas[6];
+            var img = simboloCategoria.replace(" ","%20");
             conteudo += `  <div class="corpo-pre-alimento-selecionado">
             <div style="height: 200px;" class="info-alimento">
               <div class="corpo-alimento">
-                <div class="img-categoria" style="background:url(../images/Diet/alimentos/${simboloCategoria}.webp)">
+                <div class="img-categoria" style="background:url(../images/Diet/alimentos/${img}.webp)">
                   <div class="tag-alimento"><span class="indicador"><i style="color:${corCategoria}" class='${simboloCategoria}'></i></span>
                   </div>
                 </div>
