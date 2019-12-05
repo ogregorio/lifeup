@@ -43,8 +43,11 @@ const dietaBalanceada = {
     },
     "criarBlocoKcal": function(kcal){
         var content = ` 
+                        <section id="barra-gasto-calorico" style="display: grid; border: 2px solid black;">
+                        </section>
                         <div id="mostra-kcal" >
-                            <p>Suas Calorias diárias:</p><span class="kcal-marcador">
+                        ">
+                            <span class="kcal-marcador">
                                 ${kcal} kcal  
                             </span></br>
                         </div>`;
@@ -110,8 +113,8 @@ var contraRepeticoes = 0;
 
 
 //funcao para colocar em um arranjo específico segundo a piramide alimentar para exibí-los facilmente
-function funcaoSepararDietaSegundoPiramide(simbolo, cor, img, nome,kcal, status){
-    db.results[0].dieta[0].alimentosDieta.push((nome + "&" +  kcal + "&" + 100 + "&" + simbolo + "&" + cor + "&" + img + "&" + status));
+function funcaoSepararDietaSegundoPiramide(simbolo, cor,nome,kcal, status){
+    db.results[0].dieta[0].alimentosDieta.push((nome + "&" +  kcal + "&" + 100 + "&" + simbolo + "&" + cor + "&" + status));
     localStorage.setItem('db_results_real2', JSON.stringify(db));    
 }
 
@@ -343,7 +346,7 @@ function funcaoNovaRequisicaoParaGerarMelhorAlimento(indice){
                     posicaoJDoMelhor = 0;
                 }
                 else{
-                    classificacaoDeGruposDeAlimentos(indice-1,kcal,proteinas,lipideos,carboidratos,fibras,nome,posicaoJDoMelhor);
+                    classificacaoDeGruposDeAlimentos(indice-1,kcal,proteinas,lipideos,carboidratos,fibras,nome, posicaoJDoMelhor);
                 }
             }
             funcaoSepararDietaSegundoPiramide('fas fa-question', '#585858',melhorNome, melhorKcal, 1);
@@ -553,10 +556,9 @@ function funcaoDividirPelaQuantidadeDeRefeicoes(){
                 var gramagem = Math.trunc(arrayDeBlocos[2] / db.results[0].quantRefeicoes);
                 var simbolo = arrayDeBlocos[3];
                 var cor = arrayDeBlocos[4];
-                var img = arrayDeBlocos[5];
-                var status = arrayDeBlocos[6];
+                var status = arrayDeBlocos[5];
 
-                db.results[0].dieta[1].arrayAlimentosAuxiliar.push(nome + "&" + kcal + "&" + gramagem + "&" + simbolo + "&" + cor + "&" + img + "&" + status);
+                db.results[0].dieta[1].arrayAlimentosAuxiliar.push(nome + "&" + kcal + "&" + gramagem + "&" + simbolo + "&" + cor + "&" + status);
             }//for do j
         }//for do i
         localStorage.setItem('db_results_real2', JSON.stringify(db));
@@ -582,63 +584,52 @@ function funcaoExibirAlimentos(){
             var gramagem = arrayDeBlocos[2];
             var simbolo = arrayDeBlocos[3];
             var cor = arrayDeBlocos[4];
-            var img = arrayDeBlocos[5];
-            var status = arrayDeBlocos[6];
+            var status = arrayDeBlocos[5];
             if(status == 0){
-                blocos += `  
-<div class="corpo-pre-alimento-selecionado">
-  <div style="height: 200px;" class="info-alimento">
-    <div class="corpo-alimento">
-      <div class="img-categoria" style="background:url(../images/Diet/tipos-alimentos/${img}.webp)">
-        <div class="tag-alimento"><span class="indicador"><i style="color:${cor}" class='${simbolo}'></i></span>
-        </div>
-      </div>
-      <div class='circle-text'>
-        <span>${nome}</span>
-        <br>
-        <span>${gramagem}g</span>
-        <br>
-        <span>${kcal} kcal</span>
-      </div>
-    </div>
-  </div>
-  <div class="funcao-alimento">
-    <div class='circle' onclick="funcaoEatAlimento('${kcal}','${i}');">
-      <i class="fas fa-utensils"></i>
-    </div>
-  </div>
-
-</div>
-                
-                `;
+                blocos += ` <div class="corpo-pre-alimento-selecionado">
+                <div style="height: 200px;" class="info-alimento">
+                  <div class="corpo-alimento">
+                    <div class="img-categoria" style="background:url(../images/Diet/tipos-alimentos/${simbolo}.webp)">
+                      <div class="tag-alimento"><span class="indicador"><i style="color:${cor}" class='${simbolo}'></i></span>
+                      </div>
+                    </div>
+                    <div class='circle-text'>
+                      <span>${nome}</span>
+                      <br>
+                      <span>${gramagem}g</span>
+                      <br>
+                      <span>${kcal} kcal</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="funcao-alimento">
+                  <div class='circle' onclick="funcaoEatAlimento('${kcal}','${i}');">
+                    <i class="fas fa-utensils"></i>
+                  </div>
+                </div>
+              </div>`;
             }
             else{
-                blocos += 
-            `            
-            
-<div class="corpo-pre-alimento-selecionado">
-<div style="height: 200px;" class="info-alimento">
-  <div class="corpo-alimento">
-    <div class="img-categoria" style="background:url(../images/Diet/tipos-alimentos/${img}.webp)">
-      <div class="tag-alimento"><span class="indicador"><i style="color:${cor}" class='${simbolo}'></i></span>
-      </div>
-    </div>
-    <div class='circle-text'>
-    <span>${nome}</span>
-    <br>
-    <span>${gramagem}g</span>
-    <br>
-    <span>${kcal} kcal</span>
-    </div>
-  </div>
-</div>
-<div class="funcao-alimento">
-  <div class="circle" onclick="funcaoRequisicaoAlimento('${nome}')">
-    <i class="fas fa-shopping-cart"></i>
-  </div>
-</div>
-</div>    
-              `;
+                blocos += `  <div class="corpo-pre-alimento-selecionado">
+                <div style="height: 200px;" class="info-alimento">
+                  <div class="corpo-alimento">
+                    <div class="img-categoria" style="background:url(../images/Diet/tipos-alimentos/${simbolo}.webp)">
+                      <div class="tag-alimento"><span class="indicador"><i style="color:${cor}" class='${simbolo}'></i></span>
+                      </div>
+                    </div>
+                    <div class='circle-text'>
+                      <span>${nome}</span>
+                      <br>
+                      <span>${gramagem}g</span>
+                      <br>
+                      <span>${kcal} kcal</span>
+                    </div>
+                  </div>
+                </div>
+                        <div class='circle' onclick="funcaoRequisicaoAlimento('${nome}')">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        </div>`;
             }
             
         }//final do for
@@ -664,14 +655,11 @@ function funcaoEatAlimento(kcal, indice){
 
 
 //Colocar alimento separado por arranjos
-function funcaoSelecionarAlimento(nome, indice, index, kcal, proteina, lipideo, carboidrato, fibras, symbol, cor, img){
+function funcaoSelecionarAlimento(nome, indice, index, kcal, proteina, lipideo, carboidrato, fibras,symbol, cor){
     let novoAlimento = nome;
-    let atributosDesteAlimento = kcal + "*" + proteina + "*" + lipideo + "*" + carboidrato + "*" + fibras + "*" + symbol + "*" + cor + "*" + img;
+    let atributosDesteAlimento = kcal + "*" + proteina + "*" + lipideo + "*" + carboidrato + "*" + fibras + "*" + symbol + "*" + cor;
     let bloco = document.getElementsByClassName('bloco-alimento')[indice];
-    bloco.style.opacity = '0';
-    setTimeout(function(){
-            bloco.style.display = 'none';
-    }, 700);
+    bloco.style.opacity = 0;
     db.results[1].alimentos[index-1].push(novoAlimento);
     db.results[2].atributos[index-1].push(atributosDesteAlimento);
 
@@ -711,15 +699,11 @@ function funcaoMostrarAlimentosPreSelecionados(){
             var arrayDeCaracteristicas = caracteristicasEspecificas.split("*");
             var simboloCategoria = arrayDeCaracteristicas[5];
             var corCategoria = arrayDeCaracteristicas[6];
-            var img = arrayDeCaracteristicas[7];
-            conteudo += ` 
-            
-            <div class="corpo-pre-alimento-selecionado">
+            conteudo += `  <div class="corpo-pre-alimento-selecionado">
             <div style="height: 200px;" class="info-alimento">
               <div class="corpo-alimento">
-                <div class="img-categoria" style="background:url(../images/Diet/tipos-alimentos/${img}.webp)">
-                  <div class="tag-alimento"><span class="indicador"><i style="color:${corCategoria}"
-                        class='${simboloCategoria}'></i></span>
+                <div class="img-categoria" style="background:url(../images/Diet/alimentos/${simboloCategoria}.webp)">
+                  <div class="tag-alimento"><span class="indicador"><i style="color:${corCategoria}" class='${simboloCategoria}'></i></span>
                   </div>
                 </div>
                 <div class='circle-text'>
@@ -727,14 +711,10 @@ function funcaoMostrarAlimentosPreSelecionados(){
                 </div>
               </div>
             </div>
-            <div class="funcao-alimento">
-              <div class='circle' onclick="funcaoDeletarAlimento('${i}', '${j}');">
-                <i class="fas fa-trash-alt"></i>
-              </div>
-            </div>
-          </div>
-            
-            ` ;
+                <div class='circle' onclick="funcaoDeletarAlimento('${i}', '${j}');">
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+            </div>` ;
         }
     }
     if(quantItensPreSelecionados == 0){
@@ -827,7 +807,7 @@ function criarFormQuantRef(){
     }
 }
 //função para buscar alimentos
-function funcaoBuscarAlimentos(indice, symbol, cor, img){
+function funcaoBuscarAlimentos(indice, symbol, cor){
     $.ajax({
         url: `https://taco-food-api.herokuapp.com/api/v1/category/${indice}/food`,
         success: function(dados){
@@ -842,12 +822,9 @@ function funcaoBuscarAlimentos(indice, symbol, cor, img){
                 var carboidratos = parseFloat(dados[i].attributes.carbohydrate.qty);
                 var fibras = parseFloat(dados[i].attributes.fiber.qty);
                 
-                opcoes += ` <div class="bloco-alimento" onclick="funcaoSelecionarAlimento('${dados[i].description}', ${i}, '${indice}', '${kcalArredondado}', '${proteinas}', '${lipideos}', '${carboidratos}', '${fibras}', '${symbol}', '${cor}', '${img}');">
-                                <div>
+                opcoes += ` <div class= bloco-alimento onclick="funcaoSelecionarAlimento('${dados[i].description}', ${i}, '${indice}', '${kcalArredondado}', '${proteinas}', '${lipideos}', '${carboidratos}', '${fibras}', '${symbol}', '${cor}');">
                                 <p>Nome ${dados[i].description}</br>
-                                <p>${dados[i].base_qty} (${dados[i].base_unit})</p>
                                 <p>${kcalArredondado} Kcal</p>
-                                </div>
                             </div>`;
             }
             $('#res').html(opcoes);

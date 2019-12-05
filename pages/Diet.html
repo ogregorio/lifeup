@@ -10,21 +10,22 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
   <link href="../fontawesome/css/all.css" rel="stylesheet">
   <link rel="shortcut icon" href="../images/favicon.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body style="background: #fff" onload="init()">
     
-  <header>
-    <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a>
-    <nav>
+<header>
+  <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a>
+  <nav>
     <div id="menu">
-    <ul>
-      <li class="IMC" style="background: #FF9083"><a style="color:#000" href="./Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
-      <li class="Water"><a href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
-      <li class="Sport"><a href="./Escada.html"><i class="fas fa-hiking"></i><span> Sport.fy</span></a></li>
-      <li class="Diet"><a href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
-    </ul>
+      <ul>
+        <li class="IMC"><a href="./Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
+        <li class="Water"><a href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
+        <li class="Stair"><a href="./Escada.html"><i class="fas fa-hiking"></i><span> Stair.fy</span></a></li>
+        <li class="Diet" style="background: #FCB676"><a style="color:#000;" href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
+      </ul>
     </div>
-    </nav>
+  </nav>
 </header>
 <div id="resposta"></div>
 
@@ -37,47 +38,83 @@
 
 </div>
 <div class="btn-categorias">
-<a class="btn-botao cereais" onclick="funcaoBuscarAlimentos(1, 'fas fa-bread-slice', '#FFEC6D', 0)"><i class="fas fa-bread-slice"></i> Cereais e derivados</a>
-<a class="btn-botao verduras"  onclick="funcaoBuscarAlimentos(2, 'fas fa-leaf', '#06CD3E', 1)"><i class="fas fa-leaf"></i> Verduras, hortaliças e derivados</a>
-<a class="btn-botao frutas"  onclick="funcaoBuscarAlimentos(3, 'fas fa-apple-alt', '#6F4DE9', 2)"><i class="fas fa-apple-alt"></i> Frutas e derivados</a>
-<a class="btn-botao oleos"  onclick="funcaoBuscarAlimentos(4, 'fas fa-bacon', '#E97A4D', 3)"><i class="fas fa-bacon"></i> Gorduras e óleos</a>
-<a class="btn-botao pescados"  onclick="funcaoBuscarAlimentos(5, 'fas fa-fish', '#E94D99', 4)"><i class="fas fa-fish"></i> Pescados e frutos do mar</a>
-<a class="btn-botao carnes"  onclick="funcaoBuscarAlimentos(6, 'fas fa-drumstick-bite', '#CD0621', 5)"><i class="fas fa-drumstick-bite"></i> Carnes e derivados</a>
-<a class="btn-botao leite"  onclick="funcaoBuscarAlimentos(7, 'fas fa-cheese', '#CE7A0E', 6)"><i class="fas fa-cheese"></i> Leite e derivados</a>
-<a class="btn-botao bebidas"  onclick="funcaoBuscarAlimentos(8, 'fas fa-wine-glass-alt', '#7C042C', 7)"><i class="fas fa-wine-glass-alt"></i> Bebidas</a>
-<a class="btn-botao ovos"  onclick="funcaoBuscarAlimentos(9, 'fas fa-egg', '#575757', 8)"><i class="fas fa-egg"></i> Ovos e derivados</a>
-<a class="btn-botao acucarados"  onclick="funcaoBuscarAlimentos(10, 'fas fa-candy-cane', '#A00039', 9)"><i class="fas fa-candy-cane"></i> Produtos açucarados</a>
-<a class="btn-botao variados"  onclick="funcaoBuscarAlimentos(11, 'fas fa-hotdog', '#4DE9A2', 10)"><i class="fas fa-hotdog"></i> Variados</a>
-<a class="btn-botao industrializados"  onclick="funcaoBuscarAlimentos(12, 'fas fa-cookie', '#538AD8', 11)"><i class="fas fa-cookie"></i> Alimentos industrializados</a>
-<a class="btn-botao preparados"  onclick="funcaoBuscarAlimentos(13, 'fas fa-hamburger', '#8553D8', 12)"><i class="fas fa-hamburger"></i> Alimentos preparados</a>
-<a class="btn-botao leguminosas"  onclick="funcaoBuscarAlimentos(14, 'fas fa-utensil-spoon', '#D853CD', 13)"><i class="fas fa-utensil-spoon"></i> Leguminosas e derivados</a>
-<a class="btn-botao sementes"  onclick="funcaoBuscarAlimentos(14, 'fas fa-seedling', '#00C4BC', 14)"><i class="fas fa-seedling"></i> Nozes e sementes</a>
+<a class="btn-botao cereais" onclick="funcaoBuscarAlimentos(1, 'fas fa-bread-slice', '#FFEC6D')"><i class="fas fa-bread-slice"></i> Cereais e derivados</a>
+<a class="btn-botao verduras" onclick="funcaoBuscarAlimentos(2, 'fas fa-leaf', '#06CD3E')"><i class="fas fa-leaf"></i> Verduras, hortaliças e derivados</a>
+<a class="btn-botao frutas" onclick="funcaoBuscarAlimentos(3, 'fas fa-apple-alt', '#6F4DE9')"><i class="fas fa-apple-alt"></i> Frutas e derivados</a>
+<a class="btn-botao oleos" onclick="funcaoBuscarAlimentos(4, 'fas fa-bacon', '#E97A4D')"><i class="fas fa-bacon"></i> Gorduras e óleos</a>
+<a class="btn-botao pescados" onclick="funcaoBuscarAlimentos(5, 'fas fa-fish', '#E94D99')"><i class="fas fa-fish"></i> Pescados e frutos do mar</a>
+<a class="btn-botao carnes" onclick="funcaoBuscarAlimentos(6, 'fas fa-drumstick-bite', '#CD0621')"><i class="fas fa-drumstick-bite"></i> Carnes e derivados</a>
+<a class="btn-botao leite" onclick="funcaoBuscarAlimentos(7, 'fas fa-cheese', '#ADE94D')"><i class="fas fa-cheese"></i> Leite e derivados</a>
+<a class="btn-botao bebidas" onclick="funcaoBuscarAlimentos(8, 'fas fa-wine-glass-alt', '#4DD1E9')"><i class="fas fa-wine-glass-alt"></i> Bebidas</a>
+<a class="btn-botao ovos" onclick="funcaoBuscarAlimentos(9, 'fas fa-egg', '#E9D34D')"><i class="fas fa-egg"></i> Ovos e derivados</a>
+<a class="btn-botao acucarados" onclick="funcaoBuscarAlimentos(10, 'fas fa-candy-cane', '#CD4E06')"><i class="fas fa-candy-cane"></i> Produtos açucarados</a>
+<a class="btn-botao variados" onclick="funcaoBuscarAlimentos(11, 'fas fa-hotdog', '#4DE9A2')"><i class="fas fa-hotdog"></i> Variados</a>
+<a class="btn-botao industrializados" onclick="funcaoBuscarAlimentos(12, 'fas fa-cookie', '#538AD8')"><i class="fas fa-cookie"></i> Alimentos industrializados</a>
+<a class="btn-botao preparados" onclick="funcaoBuscarAlimentos(13, 'fas fa-hamburger', '#8553D8')"><i class="fas fa-hamburger"></i> Alimentos preparados</a>
+<a class="btn-botao leguminosas" onclick="funcaoBuscarAlimentos(14, 'fas fa-utensil-spoon', '#D853CD')"><i class="fas fa-utensil-spoon"></i> Leguminosas e derivados</a>
+<a class="btn-botao sementes"  onclick="funcaoBuscarAlimentos(14, 'fas fa-seedling', '#00C4BC')"><i class="fas fa-seedling"></i> Nozes e sementes</a>
 </div>
-
-
-
-
 
 <div id="carrinho">
-<div class="coluna-carrinho">
-  <div class="carrinho-de-alimentos" onmouseout="resetStatus();" onclick="funcaoMostrarAlimentosPreSelecionados();">
-    <a><i id="cart" class="fas fa-shopping-cart"></i> Carrinho</a>
+  <div class="coluna-carrinho">
+    <div class="carrinho-de-alimentos" onmouseout="resetStatus();" onclick="funcaoMostrarAlimentosPreSelecionados();">
+      <a><i id="cart" class="fas fa-shopping-cart"></i> Carrinho</a>
+    </div>
   </div>
-</div>
-<div class="coluna-carrinho-2">
-  <div class="dieta-geral">
-    <a onclick="funcaoExibirAlimentos();" id="botao-dieta-geral">Toda Dieta</a>
+  <div class="coluna-carrinho-2">
+    <div class="dieta-geral">
+      <a onclick="funcaoExibirAlimentos();" id="botao-dieta-geral">Toda Dieta</a>
+    </div>
+    <div class="gerar-dieta">
+      <p id="botao2">Gerar Dieta</p>
+    </div>
   </div>
-  <div class="gerar-dieta">
-    <p id="botao2">Gerar Dieta</p>
   </div>
-</div>
-</div>
+  
+
 
 <div id="pre-selecionados"></div>
 <div id="res"></div>
-<div id="dieta"></div>
+<div id="dieta">
 
+
+</div>
+<div id="piramide-separada">
+  <div id="quarto">
+    <div id="quarto-0">
+      <img onclick="funcaoDietaCategoriaEspecifica(6)" src="../images/Diet/quarto-andar1-piramide.png" alt="a" id="quarto-andar1">
+    </div>
+    <div id="quarto-1">
+      <img onclick="funcaoDietaCategoriaEspecifica(7)" src="../images/Diet/quarto-andar-piramide.png" alt="a" id="quarto-andar">
+    </div>
+  </div>
+  <div id="terceiro">
+    <div id="terceiro-0">
+      <img onclick="funcaoDietaCategoriaEspecifica(3)" src="../images/Diet/terceiro-andar2-piramide.png" alt="a" id="terceiro-andar2">
+    </div>
+    <div id="terceiro-1">
+      <img onclick="funcaoDietaCategoriaEspecifica(4)" src="../images/Diet/terceiro-andar1-piramide.png" alt="a" id="terceiro-andar1">
+    </div>
+    <div id="terceiro-2">
+      <img onclick="funcaoDietaCategoriaEspecifica(5)" src="../images/Diet/terceiro-andar-piramide.png" alt="a" id="terceiro-andar">
+    </div>
+  </div>
+  <div id="segundo">
+    <div id="segundo-0">
+      <img onclick="funcaoDietaCategoriaEspecifica(2)" src="../images/Diet/segundo-andar-piramide.png" alt="a" id="segundo-andar">
+    </div>
+    <div id="segundo-1">
+      <img onclick="funcaoDietaCategoriaEspecifica(1)" src="../images/Diet/segundo-andar1-piramide.png" alt="a" id="segundo-andar1">
+    </div>
+    
+  </div> 
+  <div id="base" >
+  <img onclick="funcaoDietaCategoriaEspecifica(0)" src="../images/Diet/base-piramide.png" alt="a">
+  </div>
+</div>
+<div id="botao2" style="background-color: red;">
+  <p>Gerar Dieta</p>
+</div>
 
 
 
