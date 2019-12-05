@@ -598,10 +598,6 @@ function funcaoExibirAlimentos(){
                     </div>
                     <div class='circle-text'>
                       <span>${nome}</span>
-                      <br>
-                      <span>${gramagem}g</span>
-                      <br>
-                      <span>${kcal} kcal</span>
                     </div>
                   </div>
                 </div>
@@ -622,10 +618,6 @@ function funcaoExibirAlimentos(){
                     </div>
                     <div class='circle-text'>
                       <span>${nome}</span>
-                      <br>
-                      <span>${gramagem}g</span>
-                      <br>
-                      <span>${kcal} kcal</span>
                     </div>
                   </div>
                 </div>
