@@ -845,7 +845,7 @@ function criarBotoes(){
 }
 
 function atualizaCarrinho(){
-    var atualiza = `<a class="atualiza-carrinho" onclick="funcaoMostrarAlimentosPreSelecionados();"> Atualizar o carrinho de acordo com uma dieta adequada!</a>`;
+    var atualiza = `<a class="atualiza-carrinho" onclick="funcaoMostrarAlimentosPreSelecionados();">Atualizar o carrinho de acordo com uma dieta adequada!</a>`;
     $('#atualiza-carrinho').html(atualiza);
 }
 
