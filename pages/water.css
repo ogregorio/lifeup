@@ -13,15 +13,25 @@
 }
 #listacdds > h1{
     font-size: 3em;
-    font-family: 'Roboto' Condensed, sans-serif;
+    font-family: 'Roboto',sans-serif;
     font-weight: bold;
-    color: white;
-    background: -webkit-linear-gradient(rgb(21, 146, 248), rgba(0, 0, 0, 0.863));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
+    color: #000;
+    background: rgba(0, 0, 0, 0.863));
 }
-
+.botao-select{
+    background: #005B95;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 900;
+    color: #fff;
+    border: none;
+    padding: 1%;
+    border-radius: 8px;
+    transition: .5s;
+}
+.botao-select:hover{
+    background:#3490CB;
+    color: #000;
+}
 #recipientes{
     display: none;
     grid-template-columns: repeat(3, 1fr);
@@ -48,13 +58,17 @@
     height: 50px;
     border: 3px dashed #99CDE3;
     background-color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto',sans-serif;
     font-weight: 900;
     color: rgb(0, 0, 0); 
-    font-family: Arial, Helvetica, sans-serif;  
-    border-radius: 20%;
+    font-family: 'Roboto',sans-serif;  
+    border-radius: 8px;
+    transition: .5s;
 }
-
+#recipientes > div > button:hover{
+    background:#005B95;
+    color:#fff;
+}
 #sprites{
     display: grid;
     grid-template-columns: repeat(2, 1fr);

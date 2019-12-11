@@ -118,19 +118,19 @@ function funcaoTomarAgua(quantidade){
     }
     else{
         if(desconto > (partesIguais * 7) && desconto < (partesIguais * 8) ){
-            funcaoMostrarSprites('../images/water/sprites/sprite8.webp');
+            funcaoMostrarSprites('../images/water/sprites/sprite1.webp');
         }
         else{
             if(desconto > (partesIguais * 6) && desconto < (partesIguais * 7) ){
-                funcaoMostrarSprites('../images/water/sprites/sprite7.webp');
+                funcaoMostrarSprites('../images/water/sprites/sprite2.webp');
             }
             else{
                 if(desconto > (partesIguais * 5) && desconto < (partesIguais * 6) ){
-                    funcaoMostrarSprites('../images/water/sprites/sprite6.webp');
+                    funcaoMostrarSprites('../images/water/sprites/sprite3.webp');
                 }
                 else{
                     if(desconto > (partesIguais * 4) && desconto < (partesIguais * 5) ){
-                        funcaoMostrarSprites('../images/water/sprites/sprite6.webp');
+                        funcaoMostrarSprites('../images/water/sprites/sprite4.webp');
                     }
                     else{
                         if(desconto > (partesIguais * 3) && desconto < (partesIguais * 4) ){
@@ -138,15 +138,15 @@ function funcaoTomarAgua(quantidade){
                         }
                         else{
                             if(desconto > (partesIguais * 2) && desconto < (partesIguais * 3) ){
-                                funcaoMostrarSprites('../images/water/sprites/sprite4.webp');
+                                funcaoMostrarSprites('../images/water/sprites/sprite6.webp');
                             }
                             else{
                                 if(desconto > (partesIguais * 1) && desconto < (partesIguais * 2) ){
-                                    funcaoMostrarSprites('../images/water/sprites/sprite3.webp');
+                                    funcaoMostrarSprites('../images/water/sprites/sprite7.webp');
                                 }
                                 else{
                                     if(desconto > (partesIguais * 0) && desconto < (partesIguais * 1) ){
-                                        funcaoMostrarSprites('../images/water/sprites/sprite2.webp');
+                                        funcaoMostrarSprites('../images/water/sprites/sprite8.webp');
                                     }
                                 }
                             }

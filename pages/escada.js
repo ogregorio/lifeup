@@ -35,7 +35,7 @@ function funcaoReiderizarNovoFrame(){
                 objeto.innerHTML = content;
                 break;
             case 2:
-                content = `<img src="../images/escada/arvore.png">`;
+                content = `<img src="../images/Escada/arvore.png">`;
                 objeto.innerHTML = content;console.log(objeto);
                 break;
             case 3://personagem

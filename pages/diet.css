@@ -318,9 +318,6 @@ div#menu ul li {
 /*formatação do form quantidade de refeições*/
 #form-quant-refeicoes{
     display: inline-block;
-    width: 200px;
-    height: 400px;
-    border: 10px solid rgb(0, 0, 0);
     border-radius: 12%;
     text-align: center;
     

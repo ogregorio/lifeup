@@ -83,10 +83,10 @@ div#menu ul li {width: 20%;text-align: center;display: inline-block;margin:auto;
 #menu ul li a {font-family: 'Roboto', sans-serif;font-size: 1em;text-decoration: none;color: #fff;display: block;text-align: center;padding: 1em;}
 
 /* MENU ITENS INDIVIDUALMENTE*/
-#menu ul li.IMC{background: #E75757}#menu ul li.IMC:hover{background: #FF9083}
-#menu ul li.Water{background: #38A3D8}#menu ul li.Water:hover{background: #99CDE3}
-#menu ul li.Sport{background: #74BC2D}#menu ul li.Sport:hover{background: #9ED26B}
-#menu ul li.Diet{background: #ED7229}#menu ul li.Diet:hover{background: #FCB676}
+#menu ul li.IMC{background: #E75757;}#menu ul li.IMC:hover{background: #FF9083;}
+#menu ul li.Water{background: #38A3D8;}#menu ul li.Water:hover{background: #99CDE3;}
+#menu ul li.Sport{background: #74BC2D;}#menu ul li.Sport:hover{background: #9ED26B;}
+#menu ul li.Diet{background: #ED7229;}#menu ul li.Diet:hover{background: #FCB676;}
 
 /*Botões das categorias do Diet.fy*/
 .bloco-alimento{
@@ -238,6 +238,7 @@ div.alerta a:link{text-decoration: none;color: #ffffff;}div.alerta a:link:hover{
 
 /*Form para calcular o imc*/
 form input{margin: 2px 2px 2px 2px;width: 100%;border-radius: 8px;font-size: 24px;font-family: 'Roboto', sans-serif;text-align: center;border: none;padding: 2% 0 2% 0;
+form p{font-family: 'Roboto',sans-serif;font-size:.5em;}
 }
 /*Class para esconder os itens*/
 .esconder{
