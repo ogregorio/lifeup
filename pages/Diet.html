@@ -57,65 +57,25 @@
 
 <div id="carrinho">
   <div class="coluna-carrinho">
-    <div class="carrinho-de-alimentos" onmouseout="resetStatus();" onclick="funcaoMostrarAlimentosPreSelecionados();">
+    <div class="carrinho-de-alimentos" onclick="funcaoMostrarAlimentosPreSelecionados();">
       <a><i id="cart" class="fas fa-shopping-cart"></i> Carrinho</a>
     </div>
   </div>
   <div class="coluna-carrinho-2">
     <div class="dieta-geral">
-      <a onclick="funcaoExibirAlimentos();" id="botao-dieta-geral">Toda Dieta</a>
+      <a onclick="funcaoExibirAlimentos();" id="botao-dieta-geral">Gerar uma dieta Completa</a>
     </div>
     <div class="gerar-dieta">
-      <p id="botao2">Gerar Dieta</p>
+      <a onclick="gerarDietaIncompleta();" id="botao2">Gerar dieta Imcompleta</a>
     </div>
   </div>
   </div>
   
 
-
+<div id="atualiza-carrinho"></div>
 <div id="pre-selecionados"></div>
 <div id="res"></div>
-<div id="dieta">
-
-
-</div>
-<div id="piramide-separada">
-  <div id="quarto">
-    <div id="quarto-0">
-      <img onclick="funcaoDietaCategoriaEspecifica(6)" src="../images/Diet/quarto-andar1-piramide.png" alt="a" id="quarto-andar1">
-    </div>
-    <div id="quarto-1">
-      <img onclick="funcaoDietaCategoriaEspecifica(7)" src="../images/Diet/quarto-andar-piramide.png" alt="a" id="quarto-andar">
-    </div>
-  </div>
-  <div id="terceiro">
-    <div id="terceiro-0">
-      <img onclick="funcaoDietaCategoriaEspecifica(3)" src="../images/Diet/terceiro-andar2-piramide.png" alt="a" id="terceiro-andar2">
-    </div>
-    <div id="terceiro-1">
-      <img onclick="funcaoDietaCategoriaEspecifica(4)" src="../images/Diet/terceiro-andar1-piramide.png" alt="a" id="terceiro-andar1">
-    </div>
-    <div id="terceiro-2">
-      <img onclick="funcaoDietaCategoriaEspecifica(5)" src="../images/Diet/terceiro-andar-piramide.png" alt="a" id="terceiro-andar">
-    </div>
-  </div>
-  <div id="segundo">
-    <div id="segundo-0">
-      <img onclick="funcaoDietaCategoriaEspecifica(2)" src="../images/Diet/segundo-andar-piramide.png" alt="a" id="segundo-andar">
-    </div>
-    <div id="segundo-1">
-      <img onclick="funcaoDietaCategoriaEspecifica(1)" src="../images/Diet/segundo-andar1-piramide.png" alt="a" id="segundo-andar1">
-    </div>
-    
-  </div> 
-  <div id="base" >
-  <img onclick="funcaoDietaCategoriaEspecifica(0)" src="../images/Diet/base-piramide.png" alt="a">
-  </div>
-</div>
-<div id="botao2" style="background-color: red;">
-  <p>Gerar Dieta</p>
-</div>
-
+<div id="dieta"></div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -147,7 +107,8 @@
 </script>
 <footer>
   <div id="copyrigth">
-    <a>Copyrigth LIFE ❤ UP</a></div>
+    <a>Copyrigth LIFE ❤ UP</a>
+  </div>
 </footer>
 </body>
   

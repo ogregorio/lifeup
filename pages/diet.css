@@ -249,6 +249,17 @@ div#menu ul li {
 }
 
 /*alimentos pré selecionados*/
+#atualiza-carrinho{
+    text-align: center;
+    background: #FFD34C;
+    cursor: pointer;
+}
+#atualiza-carrinho:hover{
+    background: #F9BD06;
+    cursor: pointer;
+}
+.carrinho-de-alimentos a,.dieta-geral a,.gerar-dieta a{cursor: pointer;}
+
 #pre-selecionados{
     display: block;
     margin: 0 auto;

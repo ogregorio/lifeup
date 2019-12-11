@@ -11,7 +11,6 @@ const dietaBalanceada = {
         if(db.results[0].imc === -1){
             imcGlobal();
             $('#contador-calorias').css("display", "none");
-            $('#barra-gasto-calorico').css("display", "none");
         }
         else{
                 switch(db.results[0].state){
@@ -43,10 +42,7 @@ const dietaBalanceada = {
     },
     "criarBlocoKcal": function(kcal){
         var content = ` 
-                        <section id="barra-gasto-calorico" style="display: grid; border: 2px solid black;">
-                        </section>
                         <div id="mostra-kcal" >
-                        ">
                             <span class="kcal-marcador">
                                 ${kcal} kcal  
                             </span></br>
@@ -325,6 +321,7 @@ var novoValidador = 0;
 //funcao nova requisição com o objetivo de pegar o melhor alimento desta categoria já que o usuário não selecionou nenhum alimento
 function funcaoNovaRequisicaoParaGerarMelhorAlimento(indice){
     $.ajax({
+        crossOrigin: true,
         url: `https://taco-food-api.herokuapp.com/api/v1/category/${indice}/food`,
         success: function(dados){
             for(var i = 0; i < dados.length; i++){
@@ -655,6 +652,7 @@ function funcaoSelecionarAlimento(nome, indice, index, kcal, proteina, lipideo, 
     let atributosDesteAlimento = kcal + "*" + proteina + "*" + lipideo + "*" + carboidrato + "*" + fibras + "*" + symbol + "*" + cor;
     let bloco = document.getElementsByClassName('bloco-alimento')[indice];
     bloco.style.opacity = 0;
+    bloco.style.display = 'none';
     db.results[1].alimentos[index-1].push(novoAlimento);
     db.results[2].atributos[index-1].push(atributosDesteAlimento);
 
@@ -805,6 +803,7 @@ function criarFormQuantRef(){
 //função para buscar alimentos
 function funcaoBuscarAlimentos(indice, symbol, cor){
     $.ajax({
+        crossOrigin: true,
         url: `https://taco-food-api.herokuapp.com/api/v1/category/${indice}/food`,
         success: function(dados){
             //criando botão do carrinho para verificar itens selecionados e ter a opção de deletá-los colocar aqui quando estiver dando certo a requisição com o nome do alimento passado como parâmetro para a função mostrar alimentos pré-selecionados;
@@ -831,7 +830,7 @@ function funcaoBuscarAlimentos(indice, symbol, cor){
 //Criar botões categorizados 
 function criarBotoes(){
     $.ajax({
-    
+        crossOrigin: true,
         url: `https://taco-food-api.herokuapp.com/api/v1/category`,
         success: function (dados, status, req) {
             let texto = "";
@@ -845,7 +844,22 @@ function criarBotoes(){
     });
 }
 
+function atualizaCarrinho(){
+    var atualiza = `<a class="atualiza-carrinho" onclick="funcaoMostrarAlimentosPreSelecionados();"> Atualizar o carrinho de acordo com uma dieta adequada!</a>`;
+    $('#atualiza-carrinho').html(atualiza);
+}
 
+function gerarDietaIncompleta(){
+    atualizaCarrinho();
+    funcaoDietaCategoriaEspecifica(0);
+    funcaoDietaCategoriaEspecifica(1);
+    funcaoDietaCategoriaEspecifica(2);
+    funcaoDietaCategoriaEspecifica(3);
+    funcaoDietaCategoriaEspecifica(4);
+    funcaoDietaCategoriaEspecifica(5);
+    funcaoDietaCategoriaEspecifica(6);
+    funcaoDietaCategoriaEspecifica(7);
+}
 
 
 
