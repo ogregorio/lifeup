@@ -532,7 +532,7 @@ function funcaoClassificaCategoria(k){
 /*função requisição loja de alimentos 
 */
 function funcaoRequisicaoAlimento(nome){
-    window.location.href = `https://www.carrefour.com.br/busca/?termo=${nome}&foodzipzone=na`;
+    window.location.href = `https://www.carrefour.com.br/busca/?termo=${nome}&foodzipzone=br`;
 }
 /*função para dividir a kcal e as gramas pela quantidade de refeições*/
 function funcaoDividirPelaQuantidadeDeRefeicoes(){
