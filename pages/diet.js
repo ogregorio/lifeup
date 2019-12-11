@@ -68,12 +68,8 @@ const dietaBalanceada = {
 
 function imcGlobal(){
     if(db.results[0].imc == -1){
-        var alerta =`<a href="./Imc.html">                  <div class=$                        {"alerta"}>
-                            <p>Peehhhhhhh tem que calcular seu Imc primeiro para ter acesso à uma dieta!!!</p>
-                            <span>Clique nesta box para ir para Calcular seu IMC!!!</span>
-                        </div></a>
-                    `;
-        $('#res').html(alerta);
+       alert("VOCÊ DEVE CALCULAR SEU IMC PRIMEIRO!");
+       window.location.href = "/pages/Imc.html"
     }
     else{
         $('#res').html("");
