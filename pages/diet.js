@@ -69,7 +69,7 @@ const dietaBalanceada = {
 function imcGlobal(){
     if(db.results[0].imc == -1){
        alert("VOCÊ DEVE CALCULAR SEU IMC PRIMEIRO!");
-       window.location.href = "/pages/Imc.html"
+       window.location.href = "./Imc.html"
     }
     else{
         $('#res').html("");
